@@ -1,0 +1,1142 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+
+	"入力高速化": {
+		"prefix": "import sys input",
+		"body": [		
+			"import sys",
+			"input = lambda: sys.stdin.readline().rstrip()",
+		],
+		"description": "入力高速化"
+	},
+
+	"整数入力": {
+		"prefix": "int(input())",
+		"body": [
+			"int(input())",
+		],
+		"description": "整数入力"
+	},
+
+	"空白区切り整数入力": {
+		"prefix": "map(int,input().split())",
+		"body": [
+			"map(int,input().split())",
+		],
+		"description": "空白区切り整数入力"
+	},
+
+	"空白区切り文字列→リスト": {
+		"prefix": "list(input().split())",
+		"body": [
+			"list(input().split())",
+		],
+		"description": "空白区切り文字列→リスト"
+	},
+
+	"空白区切り整数入力→リスト": {
+		"prefix": "list(map(int, input().split()))",
+		"body": [
+			"list(map(int, input().split()))",
+		],
+		"description": "空白区切り整数入力→リスト"
+	},
+
+	"文字列→一字ずつリスト化": {
+		"prefix": "list(input())",
+		"body": [
+			"list(input())",
+		],
+		"description": "文字列→一字ずつリスト化"
+	},
+
+	"数字列→一字ずつリスト化": {
+		"prefix": "list(map(int,input()))",
+		"body": [
+			"list(map(int,input()))",
+		],
+		"description": "数字列→一字ずつリスト化"
+	},
+
+	"N行1列の文字列入力": {
+		"prefix": "[input() for _ in range($1N)",
+		"body": [
+			"[input() for _ in range($1N)",
+		],
+		"description": "N行1列の文字列入力"
+	},
+
+	"N行1列の整数入力": {
+		"prefix": "[int(input()) for _ in range($1N)",
+		"body": [
+			"[int(input()) for _ in range($1N)",
+		],
+		"description": "N行1列の整数入力"
+	},
+
+	"N行N列の文字列入力": {
+		"prefix": "[input().split()",
+		"body": [
+			"[input().split() for l in range($1N)",
+		],
+		"description": "N行N列の文字列入力"
+	},
+
+	"N行N列の整数入力": {
+		"prefix": "[list(map(int, input().split()))",
+		"body": [
+			"[list(map(int, input().split()))  for _ in range($1N)",
+		],
+		"description": "N行N列の整数入力"
+	},
+
+	"GCJtemplate": {
+		"prefix": "GCJ",
+		"body": [
+			"def solve($1):",
+			"	ans=0",
+			"",
+			"	return ans",
+			"",
+			"T=int(input())",
+			"for i in range(1,T+1):",
+			"",	
+			"	ans=solve($1)",
+			"	print(\"Case #\"+str(i)+\":\",ans)",
+		],
+		"description": "GCJtemplate"
+	},
+
+	"文字リスト→出力": {
+		"prefix": "print(''.join(S))",
+		"body": [
+			"print(''.join($1S))",
+		],
+		"description": "文字リスト→出力"
+	},
+
+	"整数リスト→出力": {
+		"prefix": "print(''.join(map(str,A)))",
+		"body": [
+			"print(''.join(map(str,$1A)))",
+		],
+		"description": "整数リスト→出力"
+	},
+
+	"整数リスト→空白出力": {
+		"prefix": "print(' '.join(map(str,A))",
+		"body": [
+			"print(' '.join(map(str,$1A)))",
+		],
+		"description": "整数リスト→空白出力"
+	},
+
+
+	"整数リスト→改行出力": {
+		"prefix": "print('\n'.join(map(str,S)))",
+		"body": [
+			"print('\n'.join(map(str,$1S)))",
+		],
+		"description": "整数リスト→改行出力"
+	},
+
+
+	"for i in range(N):": {
+		"prefix": "for i in range(N)",
+		"body": [
+			"for i in range($1N)",
+		],
+		"description": "0からN-1までのfor文"
+	},
+
+	"defaultdict as dd": {
+		"prefix": "from collections import defaultdict as dd",
+		"body": [
+			"from collections import defaultdict as dd",
+		],
+		"description": "defaultdict"
+	},	
+	
+	"入れ子dd": {
+		"prefix": "dd(lambda:dd(int))",
+		"body": [
+			"dd(lambda:dd(int))",
+		],
+		"description": "入れ子dd"
+	},	
+
+	"dd初期値指定": {
+		"prefix": "dd(lambda:-1)",
+		"body": [
+			"dd(lambda:-1)",
+		],
+		"description": "dd初期値指定"
+	},	
+
+	"itertools as itr": {
+		"prefix": "import itertools as itr",
+		"body": [
+			"import itertools as itr",
+		],
+		"description": "itertools"
+	},	
+
+	"from copy import copy,deepcopy": {
+		"prefix": "from copy import copy,deepcopy",
+		"body": [
+			"from copy import copy,deepcopy",
+		],
+		"description": "copy"
+	},	
+
+
+	"collections as col ": {
+		"prefix": "import collections as col",
+		"body": [
+			"import collections as col",
+		],
+		"description": "collections"
+	},	
+	
+	"functools": {
+		"prefix": "import functools",
+		"body": [
+			"import functools",
+		],
+		"description": "functools"
+	},	
+
+	"from decimal import Decimal": {
+		"prefix": "from decimal import Decimal",
+		"body": [
+			"from decimal import Decimal",
+		],
+		"description": "decimal"
+	},	
+
+
+	"setrecursionlimit": {
+		"prefix": "import sys",
+		"body": [
+			"import sys",
+			"sys.setrecursionlimit(10**8)",
+		],
+		"description": "setrecursionlimit"
+	},	
+
+	"deque": {
+		"prefix": "from collections import deque",
+		"body": [
+			"from collections import deque",
+		],
+		"description": "deque"
+	},	
+
+	"bisect": {
+		"prefix": "from bisect import bisect",
+		"body": [
+			"from bisect import bisect",
+		],
+		"description": "bisect"
+	},	
+	
+	"heapq": {
+		"prefix": "from heapq import heapify,heappop as hpop,heappush as hpush",
+		"body": [
+			"from heapq import heapify,heappop as hpop,heappush as hpush",
+		],
+		"description": "heapq"
+	},	
+
+
+	"numpy": {
+		"prefix": "import numpy as np",
+		"body": [
+			"import numpy as np",
+		],
+		"description": "numpy"
+	},	
+
+
+	"numba": {
+		"prefix": "from numba import njit,i8",
+		"body": [
+			"from numba import njit,i8",
+		],
+		"description": "numba"
+	},	
+
+	"njit": {
+		"prefix": "@njit((),cache=True)",
+		"body": [
+			"@njit(($1),cache=True)",
+		],
+		"description": "njit"
+	},
+
+	"標準入力": {
+		"prefix": "import io",
+		"body": [
+			"################################################",
+			"################################################",
+			"import io",
+			"import sys",
+			"",
+			"_INPUT = \"\"\"\\",
+			"$1",
+			"\"\"\"",
+			"sys.stdin = io.StringIO(_INPUT)",
+			"################################################",
+			"################################################",
+			"",
+			"import sys",
+			"input = lambda: sys.stdin.readline().rstrip()",
+			"",
+			"",
+			"$2",
+		],
+		"description": "標準入力"
+	},	
+
+	"INF": {
+		"prefix": "INF",
+		"body": [
+			"float('INF')",
+		],
+		"description": "INF"
+	},
+
+	"MOD=998244353": {
+		"prefix": "MOD=998244353",
+		"body": [
+			"MOD=998244353",
+		],
+		"description": "MOD=998244353"
+	},
+
+	"MOD=10**9+7": {
+		"prefix": "MOD=10**9+7",
+		"body": [
+			"MOD=10**9+7",
+		],
+		"description": "MOD=10**9+7"
+	},
+
+	"round": {
+		"prefix": "round=lambda x:(x*2+1)//2",
+		"body": [
+			"round=lambda x:int((x*2+1)//2)",
+		],
+		"description": "roundを四捨五入にする"
+	},	
+
+	
+	"popcount": {
+		"prefix": "def popcount(N)",
+		"body": [
+			"def popcount(N):",
+    		"return bin(N).count('1')",
+		],
+		"description": "2進数に直したときのon-bitを数える"
+	},	
+
+	"4方向カーソル": {
+		"prefix": "cur=((1,0),(0,1),(-1,0),(0,-1))",
+		"body": [
+			"cur=((1,0),(0,1),(-1,0),(0,-1))",
+		],
+		"description": "4方向カーソル"
+	},
+
+	"8方向カーソル": {
+		"prefix": "cur=((1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1),(0,-1),(1,-1))",
+		"body": [
+			"cur=((1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1),(0,-1),(1,-1))",
+		],
+		"description": "8方向カーソル"
+	},
+
+	"N行N列空リスト": {
+		"prefix": "[[None] * N for i in range(N)]",
+		"body": [
+			"[[None] * N for i in range($1N)]",
+			"$2",
+		],
+		"description": "N行N列空リスト"
+	},	
+
+	"降順sort": {
+		"prefix": "sorted()",
+		"body": [
+			"sorted($1)",
+		],
+		"description": "降順sort"
+	},
+
+	"昇順sort": {
+		"prefix": "sorted(,reverse=True)",
+		"body": [
+			"sorted($1,reverse=True)",
+		],
+		"description": "昇順sort"
+	},
+
+	"多次元sort": {
+		"prefix": "sorted(A, reverse=True, key=lambda x: x[$11])",
+		"body": [
+			"sorted($1A, reverse=$2True, key=lambda x: x[$3])",
+		],
+		"description": "多次元sort"
+	},
+
+	"exit(0)": {
+		"prefix": "exit(0)",
+		"body": [
+			"exit(0)",
+		],
+		"description": "exit(0)"
+	},
+
+	"unionfind": {
+		"prefix": "unionfind",
+		"body": [
+			"import sys",
+			"sys.setrecursionlimit(10**8)",
+			"",
+			"def find(x):",
+			"	if par[x]!=x:",
+			"		par[x]=find(par[x])" ,
+			"	return par[x]",
+			"",
+			"def union(a,b):",
+			"	a=find(a)",
+			"	b=find(b)",
+			"	if a==b:",
+			"		return",
+			"	if rank[a]<rank[b]:",
+			"		a,b=b,a",
+			"",
+			"	par[b]=a",
+			"	rank[a]+=rank[b]",
+			"	rank[b]=rank[a]",
+			"",
+			"	return",
+			"",
+			"",
+			"par=(list(range(N+1)))",
+			"rank=[1 for _ in range(N+1)]",
+		],
+		"description": "unionfind"
+	},
+	"lcm(a,b)": {
+		"prefix": "lcm(a,b)",
+		"body": [
+			"import math",
+			"def lcm(a,b):",
+			"	return (a*b)//math.gcd(a,b)",
+		],
+		"description": "lcm"
+	},
+	"comb(a,b)": {
+		"prefix": "comb(a,b)",
+		"body": [
+			"from math import factorial",
+			"def comb(n,r):",
+			"	return factorial(n)//(factorial(n-r)*factorial(r))",
+		],
+		"description": "組合せ"
+	},
+	"extgcd(*n)": {
+		"prefix": "extgcd(*n)",
+		"body": [
+			"from functools import reduce",
+			"from math import gcd",
+			"def extgcd(*n):",
+			"	return reduce(gcd,n)",
+		],
+		"description": "3引数以上のGCD"
+	},
+
+	"list(map(lambda))": {
+		"prefix": "list(map(lambda x:x-1",
+		"body": [
+			"$1=list(map(lambda x:x-1,$1))",
+		],
+		"description": "リストの各要素を-1する"
+	},
+
+	"ビット全探索": {
+		"prefix": "itr.product(range(2),repeat=N)",
+		"body": [
+			"itr.product(range(2),repeat=N)",
+		],
+		"description": "ビット全探索用イテレータ"
+	},
+
+
+	"めぐる式二分探索": {
+		"prefix": "def meguru_bisearch",
+		"body": [
+			"def judge(a):",
+			"",
+			"##ここに判定条件を書く",
+			"	if :",
+			"		return 1",
+			"	else:",
+			"		return 0",
+			"",
+			"##ng,okの条件に気をつける",
+			"def meguru_bisearch(ng, ok):",
+			"	while abs(ok-ng)>1:",
+			"		mid=(ok+ng)//2",
+			"		if judge(mid):",
+			"			ok=mid",
+			"		else:",
+			"			ng=mid",
+			"	return ok",
+		],
+		"description": "めぐる式二分探索"
+	},
+
+	"三分探索": {
+		"prefix": "def trisearch",
+		"body": [
+			"def judge(c1,c2):",
+			"",
+			"##ここに判定条件を書く",
+			"	if :",
+			"		return 1",
+			"	else:",
+			"		return 0",
+			"",
+			"def trisearch(low, high,N):",
+			"",
+			"	##許容誤差をepsとする",
+			"	eps=",
+			"",
+			"	while abs(high-low)>eps:",
+			"		c1=(high+2*low)/3",
+			"		c2=(2*high+low)/3",
+			"		if judge(c1,c2):",
+			"			low=c1",
+			"		else:",
+			"			high=c2",
+			"	return low",
+		],
+		"description": "三分探索"
+	},
+
+
+	"lru_cache自動メモ化": {
+		"prefix": "from functools import lru_cache",
+		"body": [
+			"from functools import lru_cache",
+			"",
+			"@lru_cache(maxsize=None)",
+		],
+		"description": "自動メモ化"
+	},
+
+	"深さ優先探索(再帰)": {
+		"prefix": "def dfs(edge,k)",
+		"body": [
+			"from collections import defaultdict as dd",
+			"",
+			"##再帰を使ったDFS",
+			"##行きがけの順番を配列d、帰りがけの順番を配列fに記録",
+			"",
+			"",
+			"def dfs(edge,k):",
+			"",
+			"##行きがけで処理するときはこの辺でやる",
+			"",
+			"	global cnt",
+			"	cnt+=1",
+			"	d[k]=cnt",
+			"	for i in edge[k]:",
+			"		if d[i]!=-1:",
+			"			continue",
+			"		dfs(edge,i)",
+			"",
+			"",
+			"##帰りがけで処理するときはこの辺でやる",
+			"",
+			"	cnt+=1",
+			"	f[k]=cnt",
+			"",
+			"",
+			"##有向グラフを辞書edgeに記録する",
+			"n=int(input())",
+			"edge=dd(list)",
+			"",
+			"for i in range(n):",
+			"	u,k,*v=map(int,input().split())",
+			"	for j in v:",
+			"		edge[u].append(j)",
+			"",
+			"",
+			"d=[-1 for _ in range(n+1)]",
+			"f=[-1 for _ in range(n+1)]",
+			"",
+			"cnt=0",
+			"for i in range(1,n+1):",
+			"if d[i]==-1:",
+			"	dfs(edge,i)",
+			"",
+			"",
+		],
+		"description": "深さ優先探索(再帰)"
+	},
+
+
+	"0-1 BFS": {
+		"prefix": "def BFS(i,j)",
+		"body": [
+			"import sys",
+			"sys.setrecursionlimit(10**8)",
+			"",
+			"",
+			"def BFS(i,j):",
+			"	cur=((1,0),(0,1),(-1,0),(0,-1))",
+			"",
+			"	for di,dj in cur:",
+			"		if A[i][j]<=1 and A[i+di][j+dj]=='o':",
+			"			A[i+di][j+dj]=A[i][j]",
+			"			q.append((i+di,j+dj))",
+			"",
+			"		elif A[i+di][j+dj]=='x':",
+			"			if A[i][j]<=1:",
+			"				A[i+di][j+dj]=A[i][j]+1",
+			"				q.appendleft((i+di,j+dj))",
+			"",			
+			"	if len(q)>0:",
+			"		i,j=q.pop()",
+			"		BFS(i,j)",
+			"	else:",
+			"		return",
+		],
+		"description": "0-1 BFS"
+	},
+
+	"繰り返し二乗法": {
+		"prefix": "def reppow(x,n,mod)",
+		"body": [
+			"def reppow(x,n,mod):",
+			"##(x**n)%modを繰り返し二乗法によって算出",
+			"##pow(x,n,mod)と同じ",
+			"",
+			"	n=str(format(n,'b'))",
+			"	r=1",
+			"	for i in n:",
+			"		if i=='1':",
+			"			r=(r*x)%mod",
+			"		x=(x*x)%mod",
+			"	return r",
+		],
+		"description": "繰り返し二乗法"
+	},
+
+	"floorsum": {
+		"prefix": "def floorsum(n,m,a,b):",
+		"body": [
+			
+			"import sys",
+			"sys.setrecursionlimit(10**8)",
+			"", 
+			"##y=(ax+b)/M　(0<x<=n)以下の格子点の数を求める",
+			"def floorsum(n,m,a,b):",
+			"	ans=0",
+			"	if a>=m:",
+			"		ans+=(n-1)*n*(a//m)//2",
+			"		a%=m",
+			"	if b>=m:",
+			"		ans+=n*(b//m)",
+			"		b%=m",
+			"", 
+			"	y_max=(a*n+b)//m",
+			"	x_max=(y_max*m-b)",
+			"	if y_max==0:",
+			"		return ans",
+			"",	
+			"	ans+=(n-(x_max+a-1)//a)*y_max",
+			"	ans+=floorsum(y_max,a,m,(a-x_max%a)%a)",
+			"	return ans",
+		],
+		"description": "floorsum"
+	},
+	
+	"def Miller_Rabin": {
+        "prefix": "def Miller_Rabin",
+        "body": [
+            "##ミラーラビン素数判定法",
+            "##素数ならTrue,非素数ならFalseを返す",
+            "def Miller_Rabin(N):",
+            "",
+            "    ##1は非素数",
+            "    if N==1:",
+            "        return False",
+            "",
+            "    ##2は素数その他2の倍数は合成数",
+            "    if N%2==0:",
+            "        if N==2:",
+            "            return True",
+            "        else:",
+            "            return False",
+            "",
+            "    ##偶数は篩落としたのでNは奇数でありN-1は偶数となる",
+            "    ##ここでN-1を2^s*dと表すこととする",
+            "    temp=N-1",
+            "    s=0",
+            "    while temp%2==0:",
+            "        temp//=2",
+            "        s+=1",
+            "    d=(N-1)//(2**s)",
+            "",
+            "    ##比較対象リスト",
+            "    ##2^32未満なら2,7,61",
+            "    ##2^64未満なら37までの素数を使う",
+            "    ##それ以上は2以上N未満の乱数50個を使う",
+            "",
+            "    if N<2**32:",
+            "        complist=(2,7,61)",
+            "    elif N<2**64:",
+            "        complist=(2,3,5,7,11,13,17,19,23,29,31,37)",
+            "    else:",
+            "        from random import randint",
+            "        complist=set()",
+            "        while len(complist)<50:",
+            "            complist.add(randint(2,N-1))",
+            "",
+            "    ##aをcomplist中の数字でそれぞれ試してみる",
+            "    for a in complist:",
+            "        if N<=a:break",
+            "",
+            "        ##(a^d)%N=1ならこのaについてはミラーラビンテスト合格",
+            "        if pow(a,d,N)==1:",
+            "            continue",
+            "",
+            "        ##0<=r<sを満たす(a^(d*(2^r)))%Nを見ていき",
+            "        ##-1≡N-1を満たすものが1つでもあればこのaについてミラーラビンテスト合格",
+            "        ##1つもなければその時点で不合格(非素数)",
+            "        for r in range(s):",
+            "            temp=pow(a,d*(2**r),N)",
+            "            if temp==N-1:",
+            "                break",
+            "        else:",
+            "            return False",
+            "",
+            "    ##すべてのaについてミラーラビンテストが合格したならおそらく素数と判定できる",
+            "    return True",
+        ],
+        "description": "ミラーラビン素数判定法"
+    },
+
+
+	"線形篩": {
+		"prefix": "def prime(N):",
+		"body": [
+			"def prime(N):",
+			"	P=[]",
+			"	f=[0 for _ in range(N+1)]",
+			"",
+			"	for i in range(2,N+1):",
+			"	    if f[i]==0:",
+			"			P.append(i)",
+			"			f[i]=i",
+			"",
+			"    	for j in P:",
+			"       	if i*j>N  or j>f[i] :",
+			"           	break",
+			"       	f[i*j]=j",
+			"",
+			"	return P",
+
+		],
+		"description": "線形篩"
+	},
+
+	"素因数分解": {
+		"prefix": "def fact(N):",
+		"body": [
+			"from collections import defaultdict as dd",
+			"",
+			"def fact(N):",
+			"	P=[]",
+			"	temp = N",
+			"",
+			"	for i in range(2, int(N**0.5)+1):",
+			"		if temp%i==0:",
+			"			cnt=0",
+			"			while temp%i==0:",
+			"				cnt+=1",
+			"				temp //= i",
+			"			P.append([i, cnt])",
+			"",
+			"	if temp!=1:",
+			"		P.append([temp, 1])",
+			"",
+			"	if P==[]:",
+			"		P.append([N, 1])",
+			"",
+			"	return P",
+
+		],
+		"description": "素因数分解"
+	},
+
+	"約数列挙": {
+		"prefix": "def divenum(N):",
+		"body": [
+			"##約数列挙",
+			"def divenum(N):
+			"	D=[N]",
+			"	for i in range(2, int(N**0.5)+1):",
+			"		if N%i==0:",
+			"			D.append(i)",
+			"			D.append(N//i)",
+			"",
+			"	D=sorted(D)",
+			"	return D",
+
+		],
+		"description": "約数列挙"
+	},
+
+
+
+    "def rot2d90deg(rootx,rooty,x,y)": {
+        "prefix": "def rot2d90deg(rootx,rooty,x,y)",
+        "body": [
+            "##二次元座標回転",
+            "##座標x,yをrootx,rootyに対して90[deg]回転する",
+            "def rot2d90deg(rootx,rooty,x,y):",
+            "    x-=rootx",
+            "    y-=rooty",
+            "",
+            "    x=-y",
+            "    y=x",
+            "",
+            "    x+=rootx",
+            "    y+=rooty",
+            "",
+            "    return x,y",
+        ],
+        "description": "2次元座標90度回転"
+    },
+
+    "def rot2d(rootx,rooty,x,y,th):": {
+        "prefix": "def rot2d(rootx,rooty,x,y,th):",
+        "body": [
+            "from math import sin,cos,pi",
+            "",
+            "##2次元座標回転",
+            "##座標x,yをrootx,rootyに対してth[rad]回転する",
+            "def rot2d(rootx,rooty,x,y,th):",
+            "",
+            "    x-=rootx",
+            "    y-=rooty",
+            "",
+            "    x=x*cos(th)-y*sin(th)",
+            "    y=x*sin(th)+y*cos(th)",
+            "",
+            "    x+=rootx",
+            "    y+=rooty",
+            "",
+            "    return x,y",
+        ],
+        "description": "2次元座標回転"
+    },
+
+    "def grid_r_rot(A)": {
+        "prefix": "def grid_r_rot(A)",
+        "body": [
+            "##2次元行列Aを時計回りに回転する",
+            "def grid_r_rot(A):",
+            "    return list(zip(*A[::-1]))",
+        ],
+        "description": "座標右回転"
+    },
+
+	"def grid_l_rot(A)": {
+        "prefix": "def grid_l_rot(A)",
+        "body": [
+            "##2次元行列Aを反時計回りに回転する",
+            "def grid_l_rot(A):",
+            "    return list(zip(*A))[::-1]",
+        ],
+        "description": "座標左回転"
+    },
+
+	"クラスカル法": {
+		"prefix": "def kruskal(edge):",
+		"body": [
+			"##Union-Findと一緒に使う##"
+			"##辺a,bを結ぶ重みwの辺を##"
+			"##edge[i]=[a,b,w]の形で持っておく##"
+			"##重みの総和ansを返す##"
+			"##選ばれた辺をTに書き留める##"
+			"",
+			"def kruskal(edge):",
+			"",
+			"	edge=sorted(edge, reverse=False, key=lambda x: x[2])",
+			"	ans=0",
+			"	T=[]",
+			"",
+			"	for a,b,w in edge:",
+			"		par[a]=find(a)",
+			"		par[b]=find(b)",
+			"		if par[a]==par[b]:",
+			"			continue",
+			"		else:",
+			"			T.append([a,b,r])",
+			"			ans+=r",
+			"			union(a,b)",
+			"",
+			"	return ans",
+			"",
+			"",
+		],
+		"description": "クラスカル法"
+	},
+
+	"プリム法": {
+		"prefix": "def prim(edge):",
+		"body": [
+			"##辺a,bを結ぶ重みwの辺を##",
+			"##dict型edge[a]=[b,w],edge[b]=[a,w]の形で持っておく##",
+			"##適当な点からスタートし確定している点から##",
+			"##コストが最小の辺を調べ次の点を確定させる##",
+			"##確定した点は配列chkに1を書き込む##",
+			"##コストが最小となる辺はheapqによって管理する##",
+			"",	
+			"",	
+			"from collections import defaultdict as dd",
+			"from heapq import heappop as hpop,heappush as hpush",
+			"",	
+			"q=[]",
+			"for k,w in edge[0]:",
+			"	hpush(q,(w,k))",
+			"",
+			"chk=[0 for _ in range(N+1)]",
+			"chk[0]=1",
+			"ans=0",
+			"",
+			"while len(q):",
+			"	w,k=hpop(q)",
+			"	if chk[k]==0:",
+			"		chk[k]=1",
+			"		d+=1",
+			"		ans+=w",
+			"		for m,w in edge[k]:",
+			"			hpush(q,(w,m))",
+			"",
+			"print(ans)",
+			"",
+		],
+		"description": "プリム法"
+	},
+
+
+	"ダイクストラ法": {
+		"prefix": "dijkstra",
+		"body": [
+			"from collections import defaultdict as dd",
+			"from heapq import heappop as hpop,heappush as hpush",
+			"import sys",
+			"sys.setrecursionlimit(10**8)",
+			"",
+			"",
+			"##dijkstra法",
+			"",
+			"def dijkstra(i,chk):",
+			"	for c,s,t in edge[i]:",
+			"		hpush(q,(chk[a]+c,s,t))",
+			"",
+			"	##heapqで近い順に値を決定していく",
+			"	while len(q):",
+			"		c,s,t=hpop(q)",
+			"		if chk[t]==INF:",
+			"",
+			"			dist[t]=c",
+			"			dijkstra(t,chk)",
+			"",
+			"	return",
+			"",
+			"",
+			"##edgeに重さw、始点s、終点tをタプルで記録する",
+			"edge=dd(list)",
+			"for _ in range($1#クエリの数):",
+			"	s,t,w=map(int,input().split())",
+			"	edge[s].append((w,s,t))",
+			"	##双方向の辺の場合",
+			"	##edge[t].append((w,t,s))",
+			"",
+			"",
+			"##chkに始点からの距離を記録する",
+			"##最初はINFで初期化しておく",
+			"INF=float('INF')",
+			"chk=[INF for _ in range($3#ノードの数+1)]",
+			"chk[$2#スタートの座標]=0",
+			"",
+			"##qをheapqとして使う",
+			"q=[]",
+			"",
+			"dijkstra($2#スタートの座標,chk)",
+			"",
+			"",
+		],
+		"description": "ダイクストラ法"
+	},
+
+    "fenwicktree": {
+        "prefix": "class fenwick",
+        "body": [
+            "##1-indexedのFenwickTree",
+            "##区間和とxorに対応",
+            "class fenwick:",
+            "    ##配列fwを要素数nで初期化する",
+            "    def __init__(self, n):",
+            "        self.size = n",
+            "        self.tree = [0] * (n+1)",
+            "",
+            "    ##iにｘを加算する",
+            "    def add(self, i, x):",
+            "        assert 1<=i<=self.size",
+            "        while i <= self.size:",
+            "            self.tree[i] += x",
+            "            ##LSBを加算して次のインデックスを求める",
+            "            i += i & -i",
+            "",
+            "    ##iにｘをxorする",
+            "    def xoradd(self, i, x):",
+            "        assert 1 <= i <= self.size",
+            "        while i <= self.size:",
+            "            self.tree[i] ^= x",
+            "            i += i & -i",
+            "",
+            "    ##[l,r]の区間和を取得する",
+            "    ##[0,r]から[0,l]を引く",
+            "    def sum(self, l, r):",
+            "        assert 0 <= l <= r <= self.size",
+            "        return self.sum0(r) - self.sum0(l)",
+            "",
+            "    ##[0,r]の総和を取得する",
+            "    def sum0(self, r):",
+            "        s = 0",
+            "        while r > 0:",
+            "            s += self.tree[r]",
+            "            r -= r & -r",
+            "        return s",
+            "",
+            "    ##[l,r]のxorを取得する",
+            "    ##[0,r]と[0,l]のxorを取る",
+            "    def xorsum(self, l, r):",
+            "        assert 0 <= l <= r <= self.size",
+            "        return self.xorsum0(r)^self._xorsum0(l-1)",
+            "",
+            "    ##[0,r]のxorを取得する",
+            "    def xorsum0(self, r):",
+            "        s = 0",
+            "        while r > 0:",
+            "            s ^= self.tree[r]",
+            "            r -= r & -r",
+            "        return s",
+        ],
+        "description": "フェニック木"
+    },
+
+
+	"根付き木作成": {
+		"prefix": "edge=dd(list)",
+		"body": [
+			"from collections import defaultdict as dd",
+			"from collections import deque",
+			"",
+			"",
+			"##各頂点とつながる辺を辞書edgeに記録する",
+			"edge=dd(list)",
+			"for _ in range(N-1):",
+			"	a,b=map(int,input().split())",
+			"	edge[a].append(b)",
+			"	edge[b].append(a)",
+			"",
+			"##根を1として根からの深さを配列depthで管理する",
+			"depth=[-1]*(N+1)",
+			"depth[1]=0",
+			"",
+			"##dequeを使い根からBFSによってdepthを埋めていく",
+			"q=deque()",
+			"q.append(1)",
+			"",
+			"##あとでimos法の値を伝搬させるために子を配列sonに記録しておく",
+			"son=dd(list)",
+			"",
+			"while len(q)>0:",
+			"	temp=q.pop()",
+			"	for i in edge[temp]:",
+			"		if depth[i]==-1: ",
+			"			depth[i]=depth[temp]+1",
+			"			son[temp].append(i)",
+			"			q.append(i)",
+			"",
+			"",
+
+		],
+		"description": "根付き木作成"
+	},
+
+	"トポロジカルソート": {
+		"prefix": "def topsort(edge,v)",
+		"body": [
+			"import sys",
+			"sys.setrecursionlimit(10**8)",
+			"from collections import defaultdict as dd",
+			"",
+			"def topsort(edge,v):",
+			"	seen[v]=True",
+			"	for i in edge[v]:",
+			"		if seen[i]==True:",
+			"			continue",
+			"		topsort(edge,i)",
+			"",
+			"	order.append(v)",
+			"",
+			"edge=dd(list)",
+			"V,E=map(int,input().split())",
+			"",
+			"for _ in range(E):",
+			"	s,t=map(int,input().split())",
+			"	edge[s].append(t)",
+			"",
+			"seen=[False]*(V)",
+			"order=[]",
+			"",
+			"for i in range(V):",
+			"	if seen[i]==True:",
+			"		continue",
+			"	topsort(edge,i)",
+			"",
+			"order=order[::-1]",
+			"",
+			"for ans in order:",
+			"	print(ans)",
+			"",
+			"",
+		],
+		"description": "トポロジカルソート"
+	},
+
+}
