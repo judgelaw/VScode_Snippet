@@ -54,8 +54,8 @@
 		"description": "#include SRM"
 		},
 
-	"cfgcj": {
-		"prefix": "cfgcj",
+	"cf": {
+		"prefix": "cf",
 		"body": [
 			"#include <bits/stdc++.h>",
 			"using namespace std;",
@@ -63,7 +63,7 @@
 			"",
 			"void solve(){",
 			"",
-			"    return",
+			"    return;",
 			"}",
 			"",
 			"int main() {",
@@ -73,15 +73,39 @@
 			"    int t;",
 			"    cin >> t;",
 			"",
-			"    rep(_,t){",
-			"        solve();",
-			"    }",
+			"    rep(_,t) solve();",
 			"}",
 		],
-		"description": "CF/GCJ用テンプレート"
+		"description": "CF用テンプレート"
 	},
-	
 
+    "GCJ": {
+        "prefix": "GCJ",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "#define rep(i, n) for (int i = 0; i < (int)(n); i++)",
+            "",
+            "int solve(){",
+            "    int res=0;",
+            "",
+            "",
+            "    return res;",
+            "}",
+            "",
+            "int main() {",
+            "    ios::sync_with_stdio(false);",
+            "    cin.tie(nullptr);",
+            "",
+            "    int t;",
+            "    cin >> t;",
+            "",
+            "    rep(i,t) cout << \"Case #\"<< i+1 << \":\" << solve();",
+            "}",
+        ],
+        "description": "GCJ用テンプレート"
+    },
+	
 	"using i64 = long long": {
 		"prefix": "using i64 = long long",
 		"body": [
@@ -90,6 +114,45 @@
 		"description": "longlong型定義"
 	},
 
+    "#define elif": {
+        "prefix": "#define elif",
+        "body": [
+            "#define elif else if",
+        ],
+        "description": "elif定義"
+    },
+
+    "constexpr int INF": {
+        "prefix": "constexpr int INF",
+        "body": [
+            "constexpr int INF=1234567890;",
+        ],
+        "description": "INF宣言"
+    },
+
+    "constexpr double eps": {
+        "prefix": "constexpr double eps",
+        "body": [
+            "constexpr double eps=0.000001;",
+        ],
+        "description": "eps宣言"
+    },
+
+    "constexpr int MOD=998244353;": {
+        "prefix": "constexpr int MOD=998244353;",
+        "body": [
+            "constexpr int MOD=998244353;",
+        ],
+        "description": "MOD=998244353"
+    },
+
+    "constexpr int MOD=1000000007;": {
+        "prefix": "constexpr int MOD=1000000007;",
+        "body": [
+            "constexpr int MOD=1000000007;",
+        ],
+        "description": "MOD=1000000007"
+    },
 	"using str": {
 		"prefix": "using str",
 		"body": [
@@ -97,6 +160,23 @@
 		],
 		"description": "using str"
 		},
+
+	"#define rep(i,n)": {
+		"prefix": "#define rep(i,n)",
+		"body": [
+			"#define rep(i,n) for (int i = 0; i < (int)(n); i++)",
+		],
+		"description": "rep"
+		},
+			
+	"#define rrep(i,n)": {
+		"prefix": "#define rrep(i,n)",
+		"body": [
+			"#define rrep(i,n) for (int i = n-1; (int)(0)<=i; i--)",
+		],
+		"description": "逆順rep"
+	},
+	
 
 	"#define repst(i,s,t)": {
 		"prefix": "#define repst(i,s,t)",
@@ -106,29 +186,129 @@
 		"description": "3引数rep"
 		},
 		
+    "setprecision": {
+        "prefix": "setprecision",
+        "body": [
+            "cout << fixed << setprecision(8);",
+        ],
+        "description": "小数以下出力桁数指定"
+    },
+    
+
+    "iota": {
+        "prefix": "iota",
+        "body": [
+            "iota($1.begin(),$1.end(),0);",
+        ],
+        "description": "よく使うiota"
+    },
+
+    "random": {
+        "prefix": "random",
+        "body": [
+            "random_device rd;",
+            "mt19937 mt(rd());",
+            "uniform_int_distribution<int> rand0N(0,N);",
+        ],
+        "description": "整数[0,N]の乱数を作る"
+    },
 
 
-	"comb": {
-		"prefix": "comb",
+    "int reppow(i64 a,i64 x,int mod)": {
+        "prefix": "int reppow(i64 a,i64 x,int mod)",
+        "body": [
+            "//桁が足りない場合はi128を使う",
+            "int reppow(i64 a,i64 x,int mod){",
+            "    i64 ret=1;",
+            "    while (x>0){",
+            "        if (x%2==1) ret=(ret*a)%mod;",
+            "        x/=2;",
+            "        a=(a*a)%mod;",
+            "    }",
+            "",
+            "    return ret;",
+            "}",
+        ],
+        "description": "繰り返し二乗法"
+    },
+	
+    "modcomb": {
+        "prefix": "modcomb",
+        "body": [
+            "//n以下の階乗とそのmod逆元を作る",
+            "void modperm(int N){",
+            "",
+            "    perm.resize(N+1);",
+            "    invperm.resize(N+1);    ",
+            "",
+            "    perm[0]=1;",
+            "    invperm[0]=1;",
+            "    ",
+            "    rep(i,N){",
+            "        perm[i+1]=((i+1)*perm[i])%MOD;",
+            "        invperm[i+1]=reppow(perm[i+1],MOD-2,MOD);",
+            "    }",
+            "",
+            "    return;",
+            "}",
+            "",
+            "//modを取った組合せを計算する",
+            "i64 modcomb(i64 n,i64 r){",
+            "",
+            "    i64 ret;",
+            "    ret=(perm[n]*invperm[r])%MOD;",
+            "    ret=(ret*invperm[n-r])%MOD;",
+            "",
+            "    return ret;",
+            "",
+            "}",
+        ],
+        "description": "modをとった組合せ"
+    },
+
+
+	"meguru_bisearch(int ng,int ok)": {
+		"prefix": "meguru_bisearch(int ng,int ok)",
 		"body": [
-			"int comb(int n, int r){",
-			"    assert(n>=r);",
-			"",
-			"    if (r>(n+3)/2){",
-			"        r=n-r;",
-			"    }",
-			"    long long int ret;",
-			"    ret=1;",
-			"    rep(i,r){",
-			"        ret*=n-i;",
-			"        ret/=i+1;",
-			"    }",
-			"    return ret;",
+			"bool judge(int mid){",
+			"    if ()return true;",
+			"    else return false;",
 			"}",
 			"",
+			"int meguru_bisearch(int ng,int ok){",
+			"    while(abs(ok-ng)>1){",
+			"        int mid=(ok+ng)/2;",
+			"        (judge(mid))? ok=mid:ng=mid;",
+			"    }",
+			"    return ok;",
+			"}",
 		],
-		"description": "コンビネーション"
+		"description": "めぐる式二分探索"
 	},
+	
+
+    "i64 comb(int n, int r)": {
+        "prefix": "i64 comb(int n, int r)",
+        "body": [
+            "i64 comb(int n, int r){",
+            "    assert(0<=r&&r<=n);",
+            "    if (r==0) return 1;",
+            "",
+            "    if (r>(n+3)/2){",
+            "        r=n-r;",
+            "    }",
+            "    i64 ret;",
+            "    ret=1;",
+            "    rep(i,r){",
+            "        ret*=n-i;",
+            "        ret/=i+1;",
+            "    }",
+            "    return ret;",
+            "}",
+        ],
+        "description": "組合せ"
+    },
+
 
 	"prime(int N)": {
         "prefix": "prime(int N)",
@@ -138,7 +318,7 @@
             "    vector<int> f(N+1,0);",
             "    repst(i,2,N+1){",
             "        if (f[i]==0){",
-            "            P.push_back(i);",
+            "            P.emplace_back(i);",
             "            f[i]=i;",
             "        }",
             "        for (auto j :P){",
@@ -153,6 +333,123 @@
         ],
         "description": "線形篩"
     },
+
+    "divenum": {
+        "prefix": "divenum",
+        "body": [
+            "//約数列挙",
+            "vector<i64> divenum(i64 N){",
+            "    vector<i64> ret;",
+            "    rep(i,sqrt(N)){",
+            "        if (N%(i+1)==0){",
+            "            ret.emplace_back(i+1);",
+            "            if (N/(i+1)!=i+1) ret.emplace_back(N/(i+1));",
+            "        }",
+            "    }",
+            "",
+            "    sort(ret.begin(),ret.end());",
+            "    return ret;",
+            "}",
+        ],
+        "description": "約数列挙"
+    },
+
+
+    "fact(i64 N)": {
+        "prefix": "fact(i64 N)",
+        "body": [
+            "vector<pair<i64,i64>> fact(i64 N){",
+            "",
+            "    vector<pair<i64,i64>> P;",
+            "    int rN=sqrt(N)+1;",
+            "",
+            "    repst(i,2,rN){",
+            "        if (N%i==0){",
+            "            int cnt=0;",
+            "            while(N%i==0){",
+            "                cnt++;",
+            "                N/=i;",
+            "            }",
+            "            P.emplace_back(make_pair(i,cnt));",
+            "        }",
+            "    }",
+            "",
+            "    if (N!=1||P.empty()) P.emplace_back(make_pair(N,1));",
+            "",
+            "    return P;",
+            "}",
+        ],
+        "description": "素因数分解"
+    },
+
+
+    "Millar_Rabin": {
+        "prefix": "Millar_Rabin",
+        "body": [
+            "bool Millar_Rabin(i64 N){",
+            "",
+            "    //1と偶数を篩落とす",
+            "    if (N==1) return false;",
+            "    else if (N%2==0) return (N==2)?true:false;",
+            "",
+            "    //偶数は篩落としたので(Nは奇数)=(N-1は偶数)となっている",
+            "    //N-1を2^s*dの形で表す",
+            "    i64 temp,s,d;",
+            "    temp=N-1;",
+            "    s=0;",
+            "    while (temp%2==0){",
+            "        temp/=2;",
+            "        s++;",
+            "    }",
+            "    d=(N-1)/(1LL<<s);",
+            "",
+            "    //比較対象リスト",
+            "    //2^32未満なら2,7,61",
+            "    //2^64未満なら37までの素数を使う",
+            "    //それ以上は2以上N未満の乱数50個を使う",
+            "",
+            "    vector<int> complist;",
+            "    if (N<(INT_MAX)) complist={2,7,61};",
+            "    else if (N<INT64_MAX) complist={2, 325, 9375, 28178, 450775, 9780504, 1795265022};",
+            "    //else {",
+            "    //    while (complist.size()<50) {",
+            "    //        temp=getrand();",
+            "    //        if (2<=temp&&temp<N&&find(complist.begin(),complist.end(),temp)==complist.end()){",
+            "    //            complist.emplace_back(temp);",
+            "    //        }",
+            "    //    }",
+            "    //}",
+            "",
+            "    for (auto a:complist){",
+            "        if (N<=a) break;",
+            "        ",
+            "        //(a^d)%N=1ならこのaについてはミラーラビンテスト合格",
+            "        if (reppow(a,d,N)==1) continue;",
+            "",
+            "",
+            "        //0<=r<sを満たす(a^(d*(2^r)))%Nを見ていき",
+            "        //-1≡N-1を満たすものが1つでもあればこのaについてミラーラビンテスト合格",
+            "        //1つもなければその時点で不合格(非素数)",
+            "        bool f=true;",
+            "        rep(r,s){",
+            "            temp=reppow(a,d*(1LL<<r),N);",
+            "            if (temp==N-1) {",
+            "                f=false;",
+            "                break;",
+            "            }",
+            "        }",
+            "        if (f) return false;",
+            "    }",
+            "",
+            "    //すべてのaについてミラーラビンテストが合格したならおそらく素数と判定できる",
+            "    return true;",
+            "",
+            "}",
+        ],
+        "description": "ミラーラビン素数判定法"
+    },
+
+
 
 	"ctoi": {
 		"prefix": "int ctoi",
@@ -177,10 +474,6 @@
 		"description": "int ctoi"
 		},
 
-
-
-
-
 	"cin": {
 		"prefix": "cin",
 		"body": [
@@ -197,5 +490,285 @@
 		],
 		"description": "cout"
 		},
+
+	"print": {
+		"prefix": "print",
+		"body": [
+			"void print() {cout << \"\\n\";}",
+			"",
+			"template <typename H, typename ... T>",
+			"void print(H&& h, T&&... t)",
+			"{",
+			"    cout << h << \" \";",
+			"    print(forward<T> (t)...);",
+			"}",
+		],
+		"description": "可変引数print"
+	},
+
+    "printvec": {
+        "prefix": "printvec",
+        "body": [
+            "template <typename H>",
+            "void printvec(H&& h){",
+            "    for (auto a:h) cout << a << \" \";",
+            "    cout <<\"\\n\";",
+            "}",
+        ],
+        "description": "vector print"
+    },
+
+
+	"bool comp_second_smaller": {
+		"prefix": "bool comp_second_smaller",
+		"body": [
+			"bool comp_second_smaller(pair<int, int> a, pair<int, int> b) {",
+			"    if(a.second != b.second){",
+			"        return a.second < b.second;",
+			"    }else{",
+			"        return a.first < b.first;",
+			"    }",
+			"}",
+		],
+		"description": "pair_second小さい順の比較関数"
+	},
+
+    "bool comp_second_larger": {
+        "prefix": "bool comp_second_larger",
+        "body": [
+            "bool comp_second_larger(pair<int, int> a, pair<int, int> b) {",
+            "    if(a.second != b.second){",
+            "        return a.second > b.second;",
+            "    }else{",
+            "        return a.first < b.first;",
+            "    }",
+            "}",
+        ],
+        "description": "pair_second大きい順の比較関数"
+    },
+
+	"unionfind": {
+		"prefix": "unionfind",
+		"body": [
+			"struct DSU{",
+			"    vector<int> par,rank;",
+			"    DSU(int N):par(N),rank(N,1){   ",
+			"        iota(par.begin(),par.end(),0);",
+			"    }",
+			"",
+			"    int Find(int a){",
+			"        if (par[a]!=a) return par[a]=Find(par[a]);",
+			"        return a;",
+			"    }",
+			"",
+			"    void Union(int a,int b){",
+			"",
+			"        a=Find(a);",
+			"        b=Find(b);",
+			"        if (a==b) return;",
+			"",
+			"        if (rank[b]>rank[a]){",
+			"            swap(a,b);",
+			"        }",
+			"",
+			"        rank[a]+=rank[b];",
+			"        rank[b]=rank[a];   ",
+			"        par[b]=a;",
+			"        ",
+			"        return;",
+			"    }",
+			"};",
+		],
+		"description": "Union-Find"
+	},
+
+    "非構造体unionfind": {
+        "prefix": "unionfind",
+        "body": [
+            "vector<int> par,Rank;",
+            "",
+            "int Find(int a){",
+            "    if (par[a]!=a) return par[a]=Find(par[a]);",
+            "    return a;",
+            "}",
+            "",
+            "void Union(int a,int b){",
+            "",
+            "    a=Find(a);",
+            "    b=Find(b);",
+            "    if (a==b) return;",
+            "",
+            "    if (Rank[b]>Rank[a]) swap(a,b);",
+            "",
+            "    Rank[a]+=Rank[b];",
+            "    Rank[b]=Rank[a];   ",
+            "    par[b]=a;",
+            "    ",
+            "    return;",
+            "}",
+            "",
+            "",
+            "int main() {",
+            "    ios::sync_with_stdio(false);",
+            "    cin.tie(nullptr);",
+            "",
+            "    int N,M;",
+            "    cin >> N >> M ;",
+            "",
+            "    par.resize(N);",
+            "    iota(par.begin(),par.end(),0);",
+            "    Rank.assign(N,1);",
+            "",
+            "    int A,B;",
+            "    rep(i,M){",
+            "        cin >> A >> B ;",
+            "        Union(A,B); ",
+            "    }",
+            "}",
+        ],
+        "description": "非構造体Union-Find"
+    },
+
+    "vector<pair<int,int>> cur": {
+        "prefix": "vector<pair<int,int>> cur",
+        "body": [
+            "vector<pair<int,int>> cur={{0,1},{1,0},{-1,0},{0,-1}};",
+        ],
+        "description": "4方向カーソル"
+    },
+
+    "edge": {
+        "prefix": "edge",
+        "body": [
+            "    unordered_map<int,vector<int>> edge;",
+            "    int u,v;",
+            "",
+            "    rep(i,n-1){",
+            "        cin >> u >> v;",
+            "        edge[u].emplace_back(v);",
+            "        edge[v].emplace_back(u);",
+            "    }",
+            "",
+            "    //根を1として深さをdepthに記録する",
+            "    vector<int> depth(n+1,-1);",
+            "    depth[1]=0;",
+            "",
+            "    queue<int> q;",
+            "    q.push(1);",
+            "",
+            "    //子を配列sonに記録する",
+            "    unordered_map<int ,vector<int>> son;",
+            "",
+            "    while (!q.empty()){",
+            "        int temp=q.front();",
+			"        q.pop();",
+            "",
+            "        for (auto i:edge[temp]){",
+            "            if (depth[i]!=-1) continue;",
+            "            depth[i]=depth[temp]+1;",
+            "            son[temp].emplace_back(i);",
+            "            q.push(i);",
+            "        }",
+            "    }",
+        ],
+        "description": "根付き木作成"
+    },
+
+    "DFS": {
+        "prefix": "dfs",
+        "body": [
+            "//再帰を使ったDFS",
+            "int cnt;",
+            "unordered_map<int,vector<int>> edge;",
+            "vector<int> d,depth,son;",
+            "",
+            "void DFS(int k){",
+            "    ",
+            "    //行きがけ順の場合はこの辺で処理する",
+            "    d[k]=cnt;",
+            "    cnt++;",
+            "",
+            "    for (auto i:edge[k]) if(d[i]==-1){",
+            "        depth[i]=depth[k]+1;",
+            "        DFS(i);",
+            "    } ",
+            "",
+            "    //帰りがけ順の場合はこの辺で処理する",
+            "    for (auto i:edge[k]) son[k]+=son[i]+1;",
+            "",
+            "    return;",
+            "}",
+            "",
+            "int main() {",
+            "    ios::sync_with_stdio(false);",
+            "    cin.tie(nullptr);",
+            "",
+            "    int N;",
+            "    cin >> N;",
+            "",
+            "    int p;",
+            "    rep(i,N-1){",
+            "        cin >> p ;",
+            "        edge[p].emplace_back(i+1);",
+            "    }",
+            "",
+            "",
+            "    d.assign(N,-1);",
+            "    depth.assign(N,-1);",
+            "    d[0]=0;",
+            "    depth[0]=0;",
+            "    son.assign(N,0);",
+            "    cnt=0;",
+            "",
+            "    DFS(0);",
+            "",
+            "}",
+        ],
+        "description": "再帰DFS"
+    },
+
+
+    "vector<int> getpos(int s,int e){": {
+        "prefix": "vector<int> getpos(int s,int e){",
+        "body": [
+            "vector<int> getpos(int s,int e){",
+            "    vector<int> poslist;",
+            "",
+            "    while (s<e){",
+            "        if (s%2!=0){",
+            "            poslist.push_back(s);",
+            "            s+=1;",
+            "        }",
+            "        s/=2;",
+            "        if (e%2!=0){",
+            "            e-=1;",
+            "            poslist.push_back(e);",
+            "        }",
+            "        e/=2;",
+            "    }",
+            "",
+            "    return poslist;",
+            "}",
+            "",
+        ],
+        "description": "セグメント木座標取得"
+    },
+
+    "segmenttree": {
+        "prefix": "segmenttree",
+        "body": [
+            "	 int n2=1;",
+            "    while (n2<=N+2) n2*=2;",
+            "    vector<i64> segtree(2*n2-1,INF);",
+            " ",
+            "    int k=n2;",
+            "    while (k>=1){",
+            "        segtree[k]=0;",
+            "        k/=2;",
+            "    }",
+        ],
+        "description": "セグメント木初期化"
+    },
+
 
 }
