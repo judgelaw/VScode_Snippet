@@ -114,6 +114,15 @@
 		"description": "longlong型定義"
 	},
 
+    "using i128 = __int128": {
+        "prefix": "using i128 = __int128",
+        "body": [
+            "using i128 = __int128;",
+        ],
+        "description": "int128型定義"
+    },
+
+
     "#define elif": {
         "prefix": "#define elif",
         "body": [
@@ -235,11 +244,13 @@
     "modcomb": {
         "prefix": "modcomb",
         "body": [
+            "vector<i64> perm,invperm;",
+            "",
             "//n以下の階乗とそのmod逆元を作る",
             "void modperm(int N){",
             "",
             "    perm.resize(N+1);",
-            "    invperm.resize(N+1);    ",
+            "    invperm.resize(N+1);",
             "",
             "    perm[0]=1;",
             "    invperm[0]=1;",
@@ -331,8 +342,25 @@
             "    return P;",
             "}",
         ],
-        "description": "線形篩"
+        "description": "素数列挙(線形篩)"
     },
+
+    "prime_judge": {
+        "prefix": "prime_judge",
+        "body": [
+            "//素数判定(ミラーラビン使うほどでもないくらいの)",
+            "i64 prime_judge(i64 a){",
+            "",
+            "    int sqrta=sqrt(a);",
+            "    repst(i,2,sqrta) if (a%i==0) return false;",
+            "    ",
+            "    return true;",
+            "",
+            "}",
+        ],
+        "description": "素数判定"
+    },
+
 
     "divenum": {
         "prefix": "divenum",
@@ -629,13 +657,23 @@
         "description": "非構造体Union-Find"
     },
 
-    "vector<pair<int,int>> cur": {
-        "prefix": "vector<pair<int,int>> cur",
+    "int cur[4][2]": {
+        "prefix": "int cur[4][2]",
         "body": [
-            "vector<pair<int,int>> cur={{0,1},{1,0},{-1,0},{0,-1}};",
+            "int cur[4][2]={{0,1},{-1,0},{0,-1},{1,0}};",
         ],
         "description": "4方向カーソル"
     },
+
+    "int cur[8][2]": {
+        "prefix": "int cur[8][2]",
+        "body": [
+            "int cur[8][2]={{0,1},{-1,1},{0,-1},{-1,-1},{0,-1},{1,-1},{0,1},{1,1}};",
+        ],
+        "description": "8方向カーソル"
+    },
+
+
 
     "edge": {
         "prefix": "edge",
@@ -725,6 +763,73 @@
             "}",
         ],
         "description": "再帰DFS"
+    },
+
+    "Bellman-Ford": {
+        "prefix": "Bellman-Ford",
+        "body": [
+            "    //Bellman-Ford",
+            "    int V,E,r;",
+            "    cin >> V >> E >> r;",
+            "",
+            "    vector<vector<int>> edgeto(V),edgecost(V);",
+            "    int s,t,c;",
+            "    rep(_,E){",
+            "        cin >> s >> t >> c;",
+            "",
+            "        edgeto[s].emplace_back(t);",
+            "        edgecost[s].emplace_back(c);",
+            "",
+            "    }",
+            "",
+            "    vector<int> dist(V,INF);",
+            "    dist[r]=0;",
+            "",
+            "    bool f;",
+            "    rep(loop,V){",
+            "        f=false;",
+            "        rep(i,V){",
+            "            if (dist[i]==INF)continue;",
+            "",
+            "            rep(k,edgeto[i].size()){",
+            "                int j=edgeto[i][k],c=edgecost[i][k];",
+            "                if (dist[j]>dist[i]+c){",
+            "                    dist[j]=dist[i]+c;",
+            "                    f=true;",
+            "                }",
+            "            }",
+            "        }",
+            "",
+            "        if (!f) break;",
+            "    }",
+            "",
+            "    if (f){",
+            "        cout << \"NEGATIVE CYCLE\\n\";",
+            "        return 0;",
+            "    }",
+            "",
+            "    for (auto a:dist){",
+            "        if (a==INF) cout << \"INF\\n\" ;",
+            "        else cout << a << \"\\n\";",
+            "    } ",
+            "",
+        ],
+        "description": "ベルマンフォード法"
+    },
+
+
+
+
+    "Warshall-Floyd": {
+        "prefix": "Warshall-Floyd",
+        "body": [
+            "vector<vector<i64>> DP(N,vector<i64>(N,INF));",
+            "rep(i,N)DP[i][i]=0;",
+            "//与えられた辺のコストをDPテーブルに入力する",
+            "",
+            "rep(k,N)rep(i,N)rep(j,N) DP[i][j]=min(DP[i][j],DP[i][k]+DP[k][j]);",
+        ],
+        "description": "ワ―シャルフロイド法"
     },
 
 
