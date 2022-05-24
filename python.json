@@ -2308,4 +2308,19 @@
     },
 
 
+    "def Palindrome_chk(S):": {
+        "prefix": "def Palindrome_chk(S):",
+        "body": [
+            "##文字列の回文判定",
+            "def Palindrome_chk(S):",
+            "    N=len(S)",
+            "    d,mod=divmod(N,2)",
+            "    for i in range(d+mod):",
+            "        if S[i]!=S[N-i-1]:return False",
+            "    return True",
+        ],
+        "description": "回文判定"
+    },
+
+
 }
