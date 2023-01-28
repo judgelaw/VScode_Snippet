@@ -113,13 +113,11 @@
 	},
 
     "def makevec(a,*n):": {
-        "prefix": "def makevec(a,*n):",
+        "prefix": "def makevec(a=0,*n):",
         "body": [
             "def makevec(a,*n):",
-            "    if len(n)==1:",
-            "        return [a for _ in range(n[0])]",
-            "    else:",
-            "        return [makevec(a,*n[1:]) for _ in range(n[0])]",
+            "    if len(n)==1:return [a for _ in range(n[0])]",
+            "    else:return [makevec(a,*n[1:]) for _ in range(n[0])]",
         ],
         "description": "初期値aの多次元行列を生成"
     },	
@@ -145,16 +143,13 @@
 	"GCJtemplate": {
 		"prefix": "GCJ",
 		"body": [
-			"def solve($1):",
-			"	ans=0",
-			"",
-			"	return ans",
-			"",
-			"T=int(input())",
-			"for i in range(1,T+1):",
-			"",	
-			"	ans=solve($1)",
-			"	print(\"Case #\"+str(i)+\":\",ans)",
+            "def solve(case):",
+            "    res=0",
+            "",
+            "    print(\"Case #\"+str(case)+\":\",res)",
+            "",
+            "T=int(input())",
+            "for i in range(1,T+1):solve(i)",
 		],
 		"description": "GCJtemplate"
 	},
@@ -287,12 +282,11 @@
 
 
 	"setrecursionlimit": {
-		"prefix": "import sys",
+		"prefix": "sys.setrecursionlimit(10**8)",
 		"body": [
-			"import sys",
 			"sys.setrecursionlimit(10**8)",
 		],
-		"description": "setrecursionlimit"
+		"description": "再帰上限設定"
 	},	
 
 	"deque": {
@@ -699,6 +693,17 @@
 		"description": "2進数に直したときのon-bitを数える"
 	},	
 
+    "def a20": {
+        "prefix": "def a20",
+        "body": [
+            "# \"a\"を0としたindexを返す",
+            "def a20(k):return ord(k)-ord(\"a\")",
+        ],
+        "description": "aを0としたindexを返す"
+    },
+
+
+
 	"4方向カーソル": {
 		"prefix": "cur=((1,0),(0,1),(-1,0),(0,-1))",
 		"body": [
@@ -756,37 +761,89 @@
 		"description": "exit(0)"
 	},
 
+    "def sum2D": {
+        "prefix": "def sum2D",
+        "body": [
+            "# 二次元累積和から長方形領域の総和を返す",
+            "def sum2D(si,sj,ti,tj):",
+            "    return S[ti+1][tj+1]-S[si][tj+1]-S[ti+1][sj]+S[si][sj]",
+            "",
+            "# 二次元累積和を作る",
+            "S=[[0 for _ in range(N+1)]for _ in range(N+1)]",
+            "for i in range(N):",
+            "    for j in range(N):",
+            "        S[i+1][j+1]=A[i][j]+S[i][j+1]+S[i+1][j]-S[i][j]",
+        ],
+        "description": ""
+    },
+
+
 	"unionfind": {
 		"prefix": "unionfind",
 		"body": [
 			"import sys",
 			"sys.setrecursionlimit(10**8)",
 			"",
-			"def find(x):",
-			"	if par[x]!=x:",
-			"		par[x]=find(par[x])" ,
-			"	return par[x]",
-			"",
-			"def union(a,b):",
-			"	a=find(a)",
-			"	b=find(b)",
-			"	if a==b:",
-			"		return",
-			"	if rank[a]<rank[b]:",
-			"		a,b=b,a",
-			"",
-			"	par[b]=a",
-			"	rank[a]+=rank[b]",
-			"	rank[b]=rank[a]",
-			"",
-			"	return",
+            "def find(x):",
+            "    if par[x]!=x:par[x]=find(par[x])",
+            "    return par[x]",
+            "",
+            "def union(a,b):",
+            "    a=find(a)",
+            "    b=find(b)",
+            "",
+            "    if a==b:return",
+            "    if rank[a]<rank[b]:a,b=b,a",
+            "",
+            "    par[b]=a",
+            "    rank[a]+=rank[b]",
+            "    rank[b]=rank[a]",
+            "",
+            "    return",
 			"",
 			"",
 			"par=(list(range(N+1)))",
 			"rank=[1 for _ in range(N+1)]",
 		],
-		"description": "unionfind"
+		"description": "UnionFind"
 	},
+
+    "class UnionFind:": {
+        "prefix": "class UnionFind:",
+        "body": [
+            "sys.setrecursionlimit(10**8)",
+			"",
+            "class UnionFind:",
+            "    def __init__(self,n):",
+            "        self.par=list(range(n+1))",
+            "        self.rank=[1 for _ in range(n+1)]",
+            "",
+            "    def find(self,x):",
+            "        if self.par[x]!=x:self.par[x]=self.find(self.par[x])",
+            "        return self.par[x]",
+            "",
+            "    def union(self,a,b):",
+            "        if self.same(a,b):return ",
+            "",
+            "        a=self.par[a]",
+            "        b=self.par[b]",
+            "",
+            "        if self.rank[a]<self.rank[b]:a,b=b,a",
+            "",
+            "        self.par[b]=a",
+            "        self.rank[a]+=self.rank[b]",
+            "        self.rank[b]=self.rank[a]",
+            "",
+            "        return",
+            "",
+            "    def same(self,a,b):",
+            "        if self.find(a)==self.find(b):return True",
+            "        else:return False",
+        ],
+        "description": "クラスUnionFind"
+    },
+
+
 	"lcm(a,b)": {
 		"prefix": "lcm(a,b)",
 		"body": [
@@ -836,22 +893,21 @@
 	"めぐる式二分探索": {
 		"prefix": "def meguru_bisearch",
 		"body": [
-			"def judge(a):",
+			"def judge(mid):",
 			"",
-			"##ここに判定条件を書く",
-			"	if :",
-			"		return 1",
-			"	else:",
-			"		return 0",
+			"   ##ここに判定条件を書く",
+            "",
+			"	if :return True",
+			"	else:return False",
 			"",
 			"##ng,okの条件に気をつける",
 			"def meguru_bisearch(ng, ok):",
-			"	while abs(ok-ng)>1:",
+			"",
+            "	while abs(ok-ng)>1:",
 			"		mid=(ok+ng)//2",
-			"		if judge(mid):",
-			"			ok=mid",
-			"		else:",
-			"			ng=mid",
+			"		if judge(mid):ok=mid",
+			"		else:ng=mid",
+			"",
 			"	return ok",
 		],
 		"description": "めぐる式二分探索"
@@ -896,56 +952,34 @@
 		"description": "自動メモ化"
 	},
 
-	"深さ優先探索(再帰)": {
-		"prefix": "def dfs(edge,k)",
-		"body": [
-			"from collections import defaultdict as dd",
-			"",
-			"##再帰を使ったDFS",
-			"##行きがけの順番を配列d、帰りがけの順番を配列fに記録",
-			"",
-			"",
-			"def dfs(edge,k):",
-			"",
-			"##行きがけで処理するときはこの辺でやる",
-			"",
-			"	global cnt",
-			"	cnt+=1",
-			"	d[k]=cnt",
-			"	for i in edge[k]:",
-			"		if d[i]!=-1:",
-			"			continue",
-			"		dfs(edge,i)",
-			"",
-			"",
-			"##帰りがけで処理するときはこの辺でやる",
-			"",
-			"	cnt+=1",
-			"	f[k]=cnt",
-			"",
-			"",
-			"##有向グラフを辞書edgeに記録する",
-			"n=int(input())",
-			"edge=dd(list)",
-			"",
-			"for i in range(n):",
-			"	u,k,*v=map(int,input().split())",
-			"	for j in v:",
-			"		edge[u].append(j)",
-			"",
-			"",
-			"d=[-1 for _ in range(n+1)]",
-			"f=[-1 for _ in range(n+1)]",
-			"",
-			"cnt=0",
-			"for i in range(1,n+1):",
-			"if d[i]==-1:",
-			"	dfs(edge,i)",
-			"",
-			"",
-		],
-		"description": "深さ優先探索(再帰)"
-	},
+    "深さ優先探索(再帰)": {
+        "prefix": "dfs",
+        "body": [
+            "from collections import defaultdict as dd",
+            "sys.setrecursionlimit(10**8)",
+            "",
+            "##再帰を使ったDFS",
+            "##行きがけの順番を配列d、帰りがけの順番を配列fに記録",
+            "def dfs(s):",
+            "",
+            "    ##行きがけで処理するときはこの辺でやる",
+            "",
+            "    for t in edge[s]:",
+            "        if chk[t]:continue",
+            "        dfs(t)",
+            "",
+            "    ##帰りがけで処理するときはこの辺でやる",
+            "",
+            "",
+            "##有向グラフを辞書edgeに記録する",
+            "edge=dd(list)",
+            "chk=[False]*N",
+            "",
+            "dfs()",
+        ],
+        "description": "深さ優先探索(再帰)"
+    },
+
 
 
 	"0-1 BFS": {
@@ -995,6 +1029,36 @@
 		"description": "繰り返し二乗法"
 	},
 
+    "modcomb": {
+        "prefix": "modcomb",
+        "body": [
+            "##n以下の階乗とそのmod逆元を作る",
+            "def modfact(n):",
+            "",
+            "    fact[0]=1",
+            "    invfact[0]=1",
+            "    ",
+            "    for i in range(n):",
+            "        fact[i+1]=((i+1)*fact[i])%MOD",
+            "        invfact[i+1]=pow(fact[i+1],MOD-2,MOD)",
+            "    ",
+            "",
+            "",
+            "##modを取った組合せを計算する",
+            "def modcomb(n,r):",
+            "",
+            "    if r<=0 or n<r:return 0",
+            "",
+            "    ret=0",
+            "    ret=(fact[n]*invfact[r])%MOD",
+            "    ret=(ret*invfact[n-r])%MOD",
+            "",
+            "    return ret",
+        ],
+        "description": "mod組合せ"
+    },
+
+
 	"floorsum": {
 		"prefix": "def floorsum(n,m,a,b):",
 		"body": [
@@ -1002,7 +1066,7 @@
 			"import sys",
 			"sys.setrecursionlimit(10**8)",
 			"", 
-			"##y=(ax+b)/M　(0<x<=n)以下の格子点の数を求める",
+			"##y=(ax+b)/M (0<x<=n)以下の格子点の数を求める",
 			"def floorsum(n,m,a,b):",
 			"	ans=0",
 			"	if a>=m:",
@@ -1534,6 +1598,20 @@
         "description": "LU分解"
     },
 
+    "edge=dd(list)": {
+        "prefix": "edge=dd(list)",
+        "body": [
+            "##各頂点とつながる辺を辞書edgeに記録する",
+            "edge=dd(list)",
+            "for _ in range($1):",
+            "    a,b=map(int,input().split())",
+            "    edge[a].append(b)",
+            "    edge[b].append(a)",
+        ],
+        "description": "edge基本形"
+    },
+
+
     "def BFS(i)": {
         "prefix": "def BFS(i)",
         "body": [
@@ -1831,6 +1909,52 @@
         "description": "フェニック木"
     },
 
+    "fenwick": {
+        "prefix": "class fenwick",
+        "body": [
+            "from operator import add",
+            "",
+            "##1-indexedのFenwickTree",
+            "##モノイド演算子を渡す",
+            "class fenwick:",
+            "    ##配列fwを要素数nで初期化する",
+            "    def __init__(self, n ,initval=0 ,op=add):",
+            "        self.size = n",
+            "        self.op = op",
+            "        self.initval = initval",
+            "",
+            "        self.tree = [initval for _ in range(n+1)]",
+            "",
+            "    ##iにxを加算する",
+            "    def add(self, i, x):",
+            "        assert 1<=i<=self.size",
+            "        while i <= self.size:",
+            "            self.tree[i] = self.op(self.tree[i],x)",
+            "            ##LSBを加算して次のインデックスを求める",
+            "            i += i & -i",
+            "",
+            "    ##[l,r]の区間和を取得する",
+            "    ##[0,r]から[0,l]を引く",
+            "    def sum(self, l, r):",
+            "        assert 0 <= l <= r <= self.size",
+            "        return self.sum0(r) - self.sum0(l)",
+            "",
+            "    ##[0,r]の総和を取得する",
+            "    def sum0(self, r):",
+            "        s = self.initval",
+            "        while r > 0:",
+            "            s = self.op(s,self.tree[r])",
+            "            r -= r & -r",
+            "        return s",
+            "",
+            "    def __getitem__(self,i):",
+            "        if type(i)==tuple:return self.sum(i[0],i[1])",
+            "        else:return self.sum0(i)",
+        ],
+        "description": "演算子を渡すfenwick木"
+    },
+
+
     "segtree": {
         "prefix": "segtree",
         "body": [
@@ -1865,6 +1989,62 @@
         "description": "セグメント木区間取得"
     },
 
+    "class SegmentTree": {
+        "prefix": "class SegmentTree",
+        "body": [
+            "from operator import add",
+            "",
+            "",
+            "class SegmentTree:",
+            "    def __init__(self,n,initval=0,op=add):",
+            "        self.size = n",
+            "        self.initval = initval",
+            "        self.op = op",
+            "",
+            "        self.n2=1",
+            "        while (self.n2<=n+2): self.n2*=2",
+            "        self.tree=[initval for _ in range(2*self.n2-1)]",
+            "",
+            "    def sum(self,l,r):",
+            "        l+=self.n2",
+            "        r+=self.n2",
+            "",
+            "        ret=self.initval",
+            "",
+            "        while l<r:",
+            "            if l%2!=0:",
+            "                ret=self.op(ret,self.tree[l])",
+            "                l+=1",
+            "            l//=2",
+            "            if r%2!=0:",
+            "                r-=1",
+            "                ret=self.op(ret,self.tree[r])",
+            "            r//=2",
+            "",
+            "        return ret",
+            "",
+            "    def add(self,pos,val):",
+            "        pos+=self.n2",
+            "        while pos>0:",
+            "            self.tree[pos]=self.op(self.tree[pos],val)",
+            "            pos//=2",
+            "",
+            "    def point_val(self,pos):",
+            "",
+            "        pos+=self.n2",
+            "        ret=self.initval",
+            "        while pos>0:",
+            "            ret=self.op(ret,self.tree[pos])",
+            "            pos//=2",
+            "",
+            "        return ret",
+            "",
+            "    def __getitem__(self,i):",
+            "        if type(i)==tuple:return self.sum(i[0],i[1])",
+            "        else:return self.sum(i,i+1)",
+        ],
+        "description": "セグ木クラス"
+    },
 
 
 	"根付き木作成": {
@@ -2058,6 +2238,65 @@
         ],
         "description": "強連結成分分解(SCC)"
     },
+
+    "def Tarjan_SCC()": {
+        "prefix": "def Tarjan_SCC()",
+        "body": [
+            "from collections import defaultdict as dd,deque",
+            "sys.setrecursionlimit(10**8)",
+            "",
+            "##Taejan_SCC",
+            "##参考:https://www.youtube.com/watch?v=wUgWX0nc4NY",
+            "def Tarjan_SCC():",
+            "",
+            "    def DFS(s):",
+            "",
+            "        nonlocal NodeID,SCCcnt",
+            "",
+            "        q.append(s)",
+            "        onStack[s]=True",
+            "",
+            "        IDs[s]=NodeID ",
+            "        LLV[s]=NodeID",
+            "        NodeID+=1    ",
+            "",
+            "        for t in edge[s]:",
+            "            ##まだ見ていないノードなら探索する",
+            "            if IDs[t]==-1:DFS(t)",
+            "            ##現在のSCC候補ならLLVを更新する",
+            "            if onStack[t]:LLV[s]=min(LLV[s],LLV[t])",
+            "",
+            "        ##LLVの始点まで戻ってきたらスタック中のLLVをすべて更新する",
+            "        if IDs[s]==LLV[s]:",
+            "            templist=[]",
+            "            while q:",
+            "                node=q.pop()",
+            "                onStack[node]=False",
+            "                LLV[node]=IDs[s]",
+            "                templist.append(node)",
+            "                if (node==s):break",
+            "",
+            "            SCCset.append(templist)",
+            "            SCCcnt+=1",
+            "",
+            "",
+            "    NodeID=0",
+            "    SCCcnt=0",
+            "",
+            "    IDs=dd(lambda:-1)",
+            "    LLV=dd(int)",
+            "    SCCset=[]",
+            "    onStack=dd(bool)",
+            "    q=deque()",
+            "",
+            "    for i in range(N):",
+            "        if IDs[i]==-1:DFS(i)",
+            "                ",
+            "    return SCCset",
+        ],
+        "description": "Tarjan's SCC"
+    },
+
 
     "def Ford_Fulkerson(s,t):": {
         "prefix": "def Ford_Fulkerson(s,t):",
@@ -2321,6 +2560,82 @@
         ],
         "description": "回文判定"
     },
+
+    "groupby": {
+        "prefix": "groupby",
+        "body": [
+            "from itertools import groupby",
+            "L=[(k, len(list(g))) for k, g in groupby($1)]",
+        ],
+        "description": "ランレングス圧縮"
+    },
+
+    "RLE": {
+        "prefix": "RLE",
+        "body": [
+            "##ランレングス圧縮",
+            "def RLE(S):",
+            "    ret=[]",
+            "",
+            "    for a in S:",
+            "        if len(ret) and ret[-1][0]==a:ret[-1][1]+=1",
+            "        else:ret.append([a,1])",
+            "",
+            "    return ret",
+        ],
+        "description": "ランレングス圧縮"
+    },
+
+    "class RollingHash:": {
+        "prefix": "class RollingHash:",
+        "body": [
+            "from random import randint",
+            "hmod=(1<<31)-1",
+            "hbase1=randint(0,hmod-1)",
+            "hbase2=randint(0,hmod-1)",
+            " ",
+            "# \"a\"を1としたindexを返す",
+            "def a21(k):return ord(k)-ord(\"a\")+1",
+            " ",
+            "class RollingHash:",
+            " ",
+            "    # ローリングハッシュを構成する",
+            "    def __init__(self,S):",
+            " ",
+            "        S=str(S)",
+            "        lenS=len(S)",
+            " ",
+            "        # pow[i]:baseのi乗を記録",
+            "        self.pow1=[0]*(lenS+1)",
+            "        self.pow1[0]=1",
+            "        self.pow2=[0]*(lenS+1)",
+            "        self.pow2[0]=1",
+            " ",
+            "        # hash[i]:先頭からi文字目までのハッシュ値を記録",
+            "        self.hash1=[0]*(lenS+1)",
+            "        self.hash2=[0]*(lenS+1)",
+            "        ",
+            "        for i,s in enumerate(S):",
+            "            self.hash1[i+1]=self.hash1[i]*hbase1+a21(s)",
+            "            self.hash1[i+1]%=hmod",
+            " ",
+            "            self.hash2[i+1]=self.hash2[i]*hbase2+a21(s)",
+            "            self.hash2[i+1]%=hmod",
+            " ",
+            "            self.pow1[i+1]=self.pow1[i]*hbase1%hmod",
+            "            self.pow2[i+1]=self.pow2[i]*hbase2%hmod",
+            " ",
+            " ",
+            " ",
+            "    # l文字目からr文字目までのhash値を返す[l,r]",
+            "    def hashval(self,l,r):",
+            "        ret1=(self.hash1[r]-self.hash1[l]*self.pow1[r-l])%hmod",
+            "        ret2=(self.hash2[r]-self.hash2[l]*self.pow2[r-l])%hmod",
+            "        return ret1,ret2",
+        ],
+        "description": "ローリングハッシュ"
+    },
+
 
 
 }
