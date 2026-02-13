@@ -1,0 +1,153 @@
+{
+	// Place your snippets for rust here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+    "stdin": {
+        "prefix": "stdin",
+        "body": [
+            "#![allow(non_snake_case)] ",
+            "use proconio::input;",
+            "",
+            "fn main(){",
+            "    input! {",
+            "",
+            "    } ",
+            "    ",
+            "                   ",
+            "}",
+        ],
+        "description": "競プロ用標準入力"
+    },
+
+    "dd": {
+        "prefix": "dd",
+        "body": [
+            "*$1.entry($2).or_insert(0)",
+        ],
+        "description": "defaultdict"
+    },
+
+    "cur": {
+        "prefix": "cur",
+        "body": [
+            "const CUR:[(isize,isize); 4]=[(0,1),(1,0),(0,-1),(-1,0)];",
+        ],
+        "description": "4方向カーソル"
+    },
+
+    "RLDUカーソル": {
+        "prefix": "let mut CUR",
+        "body": [
+            "let mut CUR = HashMap::new();",
+            "CUR.insert('R',[1,0]);",
+            "CUR.insert('L',[-1,0]);",
+            "CUR.insert('U',[0,1]);",
+            "CUR.insert('D',[0,-1]);",
+        ],
+        "description": "RLDUカーソル"
+    },
+
+
+    "for (di,dj) in CUR": {
+        "prefix": "for (di,dj) in CUR",
+        "body": [
+            "for (di,dj) in CUR{",
+            "",
+            "    let ni=i.wrapping_add_signed(di);",
+            "    let nj=j.wrapping_add_signed(dj);",
+            "",
+            "    if !(ni<H && nj<W){continue;}",
+            "}",
+        ],
+        "description": "BFS用カーソル"
+    },
+
+    "PotentialUnionFind": {
+        "prefix": "PotentialUnionFind",
+        "body": [
+            "struct PotentialUnionFind {",
+            "    par: Vec<usize>,",
+            "    rank: Vec<usize>,",
+            "    diffp: Vec<i64>,",
+            "}",
+            "",
+            "impl PotentialUnionFind {",
+            "    fn new(n: usize) -> Self {",
+            "        let par = (0..=n).collect::<Vec<_>>();",
+            "        let rank = vec![1; n + 1];",
+            "        let diffp = vec![0; n + 1];",
+            "        PotentialUnionFind { par, rank, diffp }",
+            "    }",
+            "",
+            "    fn find(&mut self, x: usize) -> usize {",
+            "        if self.par[x] == x {",
+            "            return x;",
+            "        }",
+            "        let ret = self.find(self.par[x]);",
+            "        self.diffp[x] += self.diffp[self.par[x]];",
+            "        self.par[x] = ret;",
+            "        ret",
+            "    }",
+            "",
+            "    fn union(&mut self, a: usize, b: usize, p: i64) -> bool {",
+            "        if self.same(a, b) {",
+            "            if self.diff(a, b) == Some(p) {",
+            "                return true;",
+            "            }",
+            "            return false;",
+            "        }",
+            "",
+            "        let mut p = p + self.acm_pot(a) - self.acm_pot(b);",
+            "        let a_root = self.find(a);",
+            "        let b_root = self.find(b);",
+            "",
+            "        let (a, b) = if self.rank[a_root] < self.rank[b_root] {",
+            "            self.par[b_root] = a_root;",
+            "            (a_root, b_root)",
+            "        } else {",
+            "            self.par[a_root] = b_root;",
+            "            p *= -1;",
+            "            (b_root, a_root)",
+            "        };",
+            "",
+            "        self.diffp[b] = p;",
+            "        self.rank[a] += self.rank[b];",
+            "        self.rank[b] = self.rank[a];",
+            "",
+            "        true",
+            "    }",
+            "",
+            "    fn same(&mut self, a: usize, b: usize) -> bool {",
+            "        self.find(a) == self.find(b)",
+            "    }",
+            "",
+            "    fn diff(&mut self, a: usize, b: usize) -> Option<i64> {",
+            "        if self.same(a, b) {",
+            "            Some(self.acm_pot(b) - self.acm_pot(a))",
+            "        } else {",
+            "            None",
+            "        }",
+            "    }",
+            "",
+            "    fn acm_pot(&mut self, a: usize) -> i64 {",
+            "        self.find(a);",
+            "        self.diffp[a]",
+            "    }",
+            "}",
+        ],
+        "description": "重み付きUnionFind"
+    },
+
+    
+}
