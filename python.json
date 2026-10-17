@@ -1689,7 +1689,7 @@
             "    ##modを取った組合せを計算する",
             "    def modcomb(self,n,r) -> int:",
             "",
-            "        if r<=0 or n<r:return 0",
+            "        if r<0 or n<r:return 0",
             "",
             "        ret=(self.fact[n]*self.invfact[r])%MOD",
             "        ret=(ret*self.invfact[n-r])%MOD",
