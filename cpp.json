@@ -1,86 +1,82 @@
 {
-	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
-	"#include std": {
-	"prefix": "#include std",
-	"body": [
-		"#include <bits/stdc++.h>",	
-		"using namespace std;",
-		"#define rep(i, n) for (int i = 0; i < int(n); i++)",
-		"",
-		"int main() {",
-		"    ios::sync_with_stdio(false);",
-		"    cin.tie(nullptr);",
-        "",
-		"    $1",
-        "",
-		"}",
-	],
-	"description": "#include std"
-	},
-
-	"#include atcoder": {
-		"prefix": "#include atcoder",
-		"body": [
-			"#include <atcoder/all>",
-			"using namespace atcoder;",
-		],
-		"description": "#include atcoder"
-		},
-
-	"#include SRM": {
-		"prefix": "#include SRM",
-		"body": [
-			"#include <bits/stdc++.h>",
-			"using namespace std;",
-			"",
-			"class classname{",
-			"   public:",
-			"   int methodname(int inputchar){",
-			"       int ans;",
-			"       return  ans;",
-			"   }",
-			"};",
-		],
-		"description": "#include SRM"
-		},
-
-	"cf": {
-		"prefix": "cf",
-		"body": [
-			"#include <bits/stdc++.h>",
-			"using namespace std;",
-			"#define rep(i, n) for (int i = 0; i < int(n); i++)",
-			"",
-			"void solve(){",
-			"",
-			"    return;",
-			"}",
-			"",
-			"int main() {",
-			"    ios::sync_with_stdio(false);",
-			"    cin.tie(nullptr);",
-			"",
-			"    int t;",
-			"    cin >> t;",
-			"",
-			"    rep(_,t) solve();",
-			"}",
-		],
-		"description": "CF用テンプレート"
-	},
-
+    // Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    "#include std": {
+        "prefix": "#include std",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "#define rep(i, n) for (int i = 0; i < int(n); i++)",
+            "",
+            "int main() {",
+            "    ios::sync_with_stdio(false);",
+            "    cin.tie(nullptr);",
+            "",
+            "    $1",
+            "",
+            "}",
+        ],
+        "description": "#include std"
+    },
+    "#include atcoder": {
+        "prefix": "#include atcoder",
+        "body": [
+            "#include <atcoder/all>",
+            "using namespace atcoder;",
+        ],
+        "description": "#include atcoder"
+    },
+    "#include SRM": {
+        "prefix": "#include SRM",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "class classname{",
+            "   public:",
+            "   int methodname(int inputchar){",
+            "       int ans;",
+            "       return  ans;",
+            "   }",
+            "};",
+        ],
+        "description": "#include SRM"
+    },
+    "cf": {
+        "prefix": "cf",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "#define rep(i, n) for (int i = 0; i < int(n); i++)",
+            "",
+            "void solve(){",
+            "",
+            "    return;",
+            "}",
+            "",
+            "int main() {",
+            "    ios::sync_with_stdio(false);",
+            "    cin.tie(nullptr);",
+            "",
+            "    int t;",
+            "    cin >> t;",
+            "",
+            "    rep(_,t) solve();",
+            "}",
+        ],
+        "description": "CF用テンプレート"
+    },
     "GCJ": {
         "prefix": "GCJ",
         "body": [
@@ -109,15 +105,13 @@
         ],
         "description": "GCJ用テンプレート"
     },
-	
-	"longlong型定義": {
-		"prefix": "using i64 = long long",
-		"body": [
-			"using i64 = long long;",
-		],
-		"description": "longlong型定義"
-	},
-
+    "longlong型定義": {
+        "prefix": "using i64 = long long",
+        "body": [
+            "using i64 = long long;",
+        ],
+        "description": "longlong型定義"
+    },
     "int128型定義": {
         "prefix": "using i128 = __int128",
         "body": [
@@ -125,8 +119,6 @@
         ],
         "description": "int128型定義"
     },
-
-
     "#define elif": {
         "prefix": "#define elif",
         "body": [
@@ -134,7 +126,6 @@
         ],
         "description": "elif定義"
     },
-
     "constexpr int INF": {
         "prefix": "constexpr int INF",
         "body": [
@@ -142,7 +133,6 @@
         ],
         "description": "INF宣言"
     },
-
     "constexpr i64 INF": {
         "prefix": "constexpr i64 INF",
         "body": [
@@ -151,8 +141,6 @@
         ],
         "description": "i64のINF"
     },
-
-
     "constexpr double eps": {
         "prefix": "constexpr double eps",
         "body": [
@@ -160,7 +148,6 @@
         ],
         "description": "eps宣言"
     },
-
     "constexpr int MOD=998244353;": {
         "prefix": "constexpr int MOD=998244353;",
         "body": [
@@ -168,7 +155,6 @@
         ],
         "description": "MOD=998244353"
     },
-
     "constexpr int MOD=1000000007;": {
         "prefix": "constexpr int MOD=1000000007;",
         "body": [
@@ -176,15 +162,13 @@
         ],
         "description": "MOD=1000000007"
     },
-
-	"using str": {
-		"prefix": "using str",
-		"body": [
-			"using str = string;",
-		],
-		"description": "using str"
-	},
-
+    "using str": {
+        "prefix": "using str",
+        "body": [
+            "using str = string;",
+        ],
+        "description": "using str"
+    },
     "using P=pair<int,int>": {
         "prefix": "using P=pair<int,int>",
         "body": [
@@ -192,7 +176,6 @@
         ],
         "description": "using pair"
     },
-
     "ACLのmint": {
         "prefix": "using mint",
         "body": [
@@ -200,8 +183,6 @@
         ],
         "description": "ACLのmint"
     },
-
-
     "ビット長さ": {
         "prefix": "bit_length",
         "body": [
@@ -210,33 +191,27 @@
         ],
         "description": "ビット長さを求める"
     },
-
-
-	"#define rep(i,n)": {
-		"prefix": "#define rep(i,n)",
-		"body": [
-			"#define rep(i,n) for (int i = 0; i < int(n); i++)",
-		],
-		"description": "rep"
-	},
-			
-	"#define rrep(i,n)": {
-		"prefix": "#define rrep(i,n)",
-		"body": [
-			"#define rrep(i,n) for (int i = int(n)-1; 0<=i; i--)",
-		],
-		"description": "逆順rep"
-	},
-	
-
-	"#define repst(i,s,t)": {
-		"prefix": "#define repst(i,s,t)",
-		"body": [
-			"#define repst(i, s, t) for (int i = int(s); i < int(t); i++)",
-		],
-		"description": "3引数rep"
-		},
-    
+    "#define rep(i,n)": {
+        "prefix": "#define rep(i,n)",
+        "body": [
+            "#define rep(i,n) for (int i = 0; i < int(n); i++)",
+        ],
+        "description": "rep"
+    },
+    "#define rrep(i,n)": {
+        "prefix": "#define rrep(i,n)",
+        "body": [
+            "#define rrep(i,n) for (int i = int(n)-1; 0<=i; i--)",
+        ],
+        "description": "逆順rep"
+    },
+    "#define repst(i,s,t)": {
+        "prefix": "#define repst(i,s,t)",
+        "body": [
+            "#define repst(i, s, t) for (int i = int(s); i < int(t); i++)",
+        ],
+        "description": "3引数rep"
+    },
     "入力基本": {
         "prefix": "cin",
         "body": [
@@ -244,8 +219,6 @@
         ],
         "description": "cin"
     },
-        
-
     "出力基本": {
         "prefix": "cout",
         "body": [
@@ -253,8 +226,6 @@
         ],
         "description": "cout"
     },
-
-
     "setprecision": {
         "prefix": "setprecision",
         "body": [
@@ -262,13 +233,21 @@
         ],
         "description": "小数以下出力桁数指定"
     },
-
     "f=trueならYesを出力": {
         "prefix": "(f?\"Yes\":\"No\")",
         "body": [
             "(f?\"Yes\":\"No\")",
         ],
         "description": "f=trueならYesを出力"
+    },
+    "next_permutation": {
+        "prefix": "next_permutation",
+        "body": [
+            "    do{",
+            "       ",
+            "    }while(next_permutation(A.begin(),A.end()));",
+        ],
+        "description": "next_permutation"
     },
 
     "aを0に変換": {
@@ -278,7 +257,36 @@
         ],
         "description": "aを0に変換"
     },
-
+    "辞書順順番": {
+        "prefix": "",
+        "body": [
+            "// 順列が辞書順で何番目か調べる",
+            "",
+            "int permutation_num(vector<int> &A){",
+            "",
+            "    int N=size(A);",
+            "",
+            "    set<int> not_used;",
+            "    for (auto a:A)not_used.insert(a);",
+            "    ",
+            "    int ret=0;",
+            "",
+            "    rep(i,N){",
+            "        ",
+            "        int a=A[i];",
+            "        auto itr=not_used.lower_bound(a);",
+            "",
+            "        // 今出てきた数より小さい数が残っている場合はそれらの階乗通り小さい順列が存在する",
+            "        ret=ret+distance(not_used.begin(),itr)*fact[N-1-i];",
+            "",
+            "        not_used.erase(a);",
+            "    }",
+            "",
+            "    return ret;",
+            "}",
+        ],
+        "description": "辞書順の順番を求める"
+    },
     "回文判定": {
         "prefix": "bool Palindrome_chk",
         "body": [
@@ -293,13 +301,9 @@
         ],
         "description": "回文判定"
     },
-
-
-
     "print": {
         "prefix": "print",
         "body": [
-
             "// python風print関数",
             "",
             "// プロトタイプ宣言",
@@ -327,7 +331,6 @@
         ],
         "description": "可変引数print"
     },
-
     "printvec": {
         "prefix": "printvec",
         "body": [
@@ -339,66 +342,39 @@
         ],
         "description": "vector print"
     },
-
     "デバッグ用出力": {
         "prefix": "debug",
         "body": [
             "// デバッグ出力用関数",
             "",
             "// プロトタイプ宣言",
-            "template<typename T> ostream &operator<<(ostream &os, const vector<T> &V);",
-            "template<typename T> ostream &operator<<(ostream &os, const vector<vector<T>> &VV);",
-            "template<typename T, int sz> typename enable_if<!is_same<T, char>::value, ostream&>::type operator<<(ostream &os, const T (&A)[sz]);",
-            "template<typename T1, typename T2>ostream &operator<<(ostream &os, const pair<T1, T2> &p);",
-            "template<typename... Types> ostream &operator<<(ostream &os, const tuple<Types...> &tup);",
-            "template<typename T>ostream &operator<<(ostream &os, const set<T> &s);",
-            "template<typename T>ostream &operator<<(ostream &os, const multiset<T> &s);",
-            "template<typename T>ostream &operator<<(ostream &os, const unordered_set<T> &s);",
-            "template<typename T>ostream &operator<<(ostream &os, const unordered_multiset<T> &s);",
-            "template<typename K, typename V>ostream &operator<<(ostream &os, const map<K, V> &m);",
-            "template<typename K, typename V>ostream &operator<<(ostream &os, const unordered_map<K, V> &m);",
-            "template<typename T>ostream &operator<<(ostream &os, queue<T> q);",
-            "template<typename T>ostream &operator<<(ostream &os, stack<T> s);",
-            "template<typename T>ostream &operator<<(ostream &os, const deque<T> &q);",
-            "template<typename T,typename Tc1,typename Tc2>ostream &operator<<(ostream &os, priority_queue<T,Tc1,Tc2> q);",
-            "",
-            "// vector",
             "template <typename T>",
-            "ostream &operator<<(ostream &os, const vector<T> &V){",
-            "    int l=size(V);",
-            "    os << \"[\";",
-            "    rep(i,l)os << V[i] << (i<l-1?\" \":\"]\\n\");  ",
-            "",
-            "    return os;",
-            "}",
-            "",
-            "// 2次元vector",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, const vector<vector<T>> &VV) {",
-            "    for (const auto &V: VV) os << V ;",
-            "    return os;",
-            "}",
+            "concept Iterable = requires(T &t) {",
+            "    { t.begin() } -> input_or_output_iterator;",
+            "    { t.end() } -> input_or_output_iterator;",
+            "} ",
+            "// ここで string ではないことを明示的に指定",
+            "&& !same_as<decay_t<T>, string>;",
             "",
             "// Cスタイル配列(char配列はおかしくなるので除く)",
             "template<typename T, int sz>",
             "typename enable_if<!is_same<T, char>::value, ostream&>::type",
-            "operator<<(ostream &os, const T (&A)[sz]) {",
-            "    os << \"[\";",
+            "inline operator<<(ostream &os, const T (&A)[sz]) {",
             "    rep(i,sz) {",
-            "        os << A[i] << (i<sz-1?\" \":\"]\\n\");",
+            "        os << A[i] << (i<sz-1?\" \":\"\");",
             "    }",
             "    return os;",
             "}",
             "// pair",
             "template<typename T1, typename T2>",
-            "ostream &operator<<(ostream &os, const pair<T1, T2> &p) {",
+            "inline ostream &operator<<(ostream &os, const pair<T1, T2> &p) {",
             "    os << \"(\" << p.first << \", \" << p.second << \")\";",
             "    return os;",
             "}",
             "",
             "// tuple",
             "template<typename... Types>",
-            "ostream &operator<<(ostream &os, const tuple<Types...> &tup) {",
+            "inline ostream &operator<<(ostream &os, const tuple<Types...> &tup) {",
             "    os << \"(\";",
             "    apply([&os](const Types&... args) {",
             "        size_t i = 0;",
@@ -408,148 +384,93 @@
             "    return os;",
             "}",
             "",
-            "// set",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, const set<T> &s) {",
-            "    os << \"{\";",
-            "    for (auto it = s.begin(); it != s.end(); ++it) {",
-            "        os << *it;",
-            "        if (next(it) != s.end()) os << \", \";",
-            "    }",
-            "    os << \"}\";",
-            "    return os;",
-            "}",
-            "",
-            "// multiset",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, const multiset<T> &s) {",
-            "    os << \"{\";",
-            "    for (auto it = s.begin(); it != s.end(); ++it) {",
-            "        os << *it;",
-            "        if (next(it) != s.end()) os << \", \";",
-            "    }",
-            "    os << \"}\";",
-            "    return os;",
-            "}",
-            "",
-            "// unordered_set",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, const unordered_set<T> &s) {",
-            "    os << \"{\";",
-            "    for (auto it = s.begin(); it != s.end(); ++it) {",
-            "        os << *it;",
-            "        if (next(it) != s.end()) os << \", \";",
-            "    }",
-            "    os << \"}\";",
-            "    return os;",
-            "}",
-            "",
-            "// unordered_multiset",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, const unordered_multiset<T> &s) {",
-            "    os << \"{\";",
-            "    for (auto it = s.begin(); it != s.end(); ++it) {",
-            "        os << *it;",
-            "        if (next(it) != s.end()) os << \", \";",
-            "    }",
-            "    os << \"}\";",
-            "    return os;",
-            "}",
-            "",
-            "// map",
-            "template<typename K, typename V>",
-            "ostream &operator<<(ostream &os, const map<K, V> &m) {",
-            "    os << \"{\";",
-            "    for (auto it = m.begin(); it != m.end(); ++it) {",
-            "        os << it->first << \": \" << it->second;",
-            "        if (next(it) != m.end()) os << \", \";",
-            "    }",
-            "    os << \"}\";",
-            "    return os;",
-            "}",
-            "",
-            "// unordered_map",
-            "template<typename K, typename V>",
-            "ostream &operator<<(ostream &os, const unordered_map<K, V> &m) {",
-            "    os << \"{\";",
-            "    for (auto it = m.begin(); it != m.end(); ++it) {",
-            "        os << it->first << \": \" << it->second;",
-            "        if (next(it) != m.end()) os << \", \";",
-            "    }",
-            "    os << \"}\";",
-            "    return os;",
-            "}",
-            "",
             "// queue(コピーする)",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, queue<T> q) {",
-            "    os << \"(queue) front-> {\";",
-            "    while(!q.empty()){",
-            "        os << q.front() << (size(q)>1?\", \":\"\");",
+            "template <typename T, typename CT>",
+            "inline ostream &operator<<(ostream &os, queue<T, CT> q)",
+            "{",
+            "    os << \"\\e[36m(queue) front->\\e[35m {\";",
+            "    while (!q.empty())",
+            "    {",
+            "        os << q.front();",
             "        q.pop();",
+            "        if (!q.empty())",
+            "            os << \", \";",
             "    }",
-            "    os << \"} <-back\";",
+            "    os << \"}\\e[36m <-back\\e[35m\";",
             "    return os;",
             "}",
             "",
             "// stack(コピーする)",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, stack<T> s) {",
-            "    os << \"(stack) top-> {\";",
-            "    while(!s.empty()){",
-            "        os << s.top() << (size(s)>1?\", \":\"\");",
+            "template <typename T, typename CT>",
+            "inline ostream &operator<<(ostream &os, stack<T, CT> s)",
+            "{",
+            "    os << \"\\e[36m(stack) top-> \\e[35m{\";",
+            "    while (!s.empty())",
+            "    {",
+            "        os << s.top();",
             "        s.pop();",
+            "        if (!s.empty())",
+            "            os << \", \";",
             "    }",
-            "    os << \"} <-bottom\";",
-            "    return os;",
-            "}",
-            "",
-            "// deque",
-            "template<typename T>",
-            "ostream &operator<<(ostream &os, const deque<T> &q) {",
-            "    os << \"(deque) front-> {\";",
-            "    for (auto it = q.begin(); it != q.end(); ++it) {",
-            "        os << *it;",
-            "        if (next(it) != q.end()) os << \", \";",
-            "    }",
-            "    os << \"} <-back\";",
+            "    os << \"}\\e[36m <-bottom\\e[35m\";",
             "    return os;",
             "}",
             "",
             "// priority_queue(コピーする)",
-            "template<typename T,typename Tc1,typename Tc2>",
-            "ostream &operator<<(ostream &os, priority_queue<T,Tc1,Tc2> q) {",
-            "    os << \"(priority_queue) top-> {\";",
-            "    while(!q.empty()){",
-            "        os << q.top() << (size(q)>1?\", \":\"\");",
+            "template <typename T, typename CT, typename CP>",
+            "inline ostream &operator<<(ostream &os, priority_queue<T, CT, CP> q)",
+            "{",
+            "    os << \"\\e[36m(priority_queue) top->\\e[35m {\";",
+            "    while (!q.empty())",
+            "    {",
+            "        os << q.top();",
             "        q.pop();",
+            "        if (!q.empty())",
+            "            os << \", \";",
             "    }",
-            "    os << \"} <-bottom\";",
+            "    os << \"}\\e[36m <-bottom\\e[35m\";",
             "    return os;",
             "}",
             "",
-            "// 複数引数出力（debug用）",
-            "inline void dbg_out() { cerr << \"\\n\"; }",
-            "template <typename T, typename... Ts>",
-            "void dbg_out(const T& a, const Ts&... b) {",
-            "    cerr << a;",
-            "    if constexpr (sizeof...(b)) cerr << \"\\n\";",
-            "    dbg_out(b...);",
+            "// イテレータ使えるの全部",
+            "template <Iterable T>",
+            "inline ostream &operator<<(ostream &os, const T &v) {",
+            "",
+            "    os << \"[\";",
+            "    for (auto it = v.begin(); it != v.end(); ++it) {",
+            "        os << *it << (next(it) != v.end() ? \", \" : \"\");",
+            "    }",
+            "    os << \"]\";   ",
+            "",
+            "    return os;",
             "}",
             "",
+            "// 分割用のヘルパー",
+            "void dbg_one(const string& name, const auto& val) {",
+            "    cerr << \"\\e[36;47;1m\" << name << \": \" << \"\\e[35m\" << val << \"\\e[0m\\n\";",
+            "}",
+            "",
+            "// 展開用のマクロ",
             "#ifdef JUDGE_LOCAL",
             "#define dbg(...) \\",
-            "    cerr << \"\\e[36;47;1m\" << #__VA_ARGS__ << \"\\e[35;1m \\n\"; \\",
-            "    dbg_out(__VA_ARGS__); \\",
-            "    cerr << \"\\e[m\";",
+            "    do { \\",
+            "        string s = #__VA_ARGS__; \\",
+            "        replace(s.begin(), s.end(), ',', ' '); \\",
+            "        stringstream ss(s); \\",
+            "        string name; \\",
+            "        auto print_each = [&](auto&& self, const auto& first, const auto&... rest) -> void { \\",
+            "            ss >> name; \\",
+            "            dbg_one(name, first); \\",
+            "            if constexpr (sizeof...(rest) > 0) self(self, rest...); \\",
+            "        }; \\",
+            "        print_each(print_each, __VA_ARGS__); \\",
+            "    } while(0)",
             "#else",
             "#define dbg(...) void()",
             "#endif",
         ],
         "description": "ローカルデバッグ用出力"
     },
-
-
     "iota": {
         "prefix": "iota",
         "body": [
@@ -557,7 +478,6 @@
         ],
         "description": "よく使うiota"
     },
-
     "再帰するラムダ式": {
         "prefix": "auto rec",
         "body": [
@@ -568,7 +488,19 @@
         ],
         "description": "再帰するラムダ式(C++26で変更予定)"
     },
-
+    "最新の再帰ラムダ": {
+        "prefix": "rec",
+        "body": [
+            "    // C++23から使える再帰",
+            "    auto func = [&](this auto self,int i){",
+            "        if (i==1)return 1;",
+            "        return self(i-1)*i;",
+            "    };",
+            "",
+            "    func(5);",
+        ],
+        "description": "再帰するラムダ式"
+    },
     "clock": {
         "prefix": "clock",
         "body": [
@@ -581,8 +513,6 @@
         ],
         "description": "時間計測,timer"
     },
-
-
     "random": {
         "prefix": "random",
         "body": [
@@ -594,8 +524,6 @@
         ],
         "description": "整数[0,N]の乱数を作る、rand0N(mt)として使う"
     },
-
-
     "繰り返し二乗法": {
         "prefix": "reppow",
         "body": [
@@ -616,11 +544,130 @@
         ],
         "description": "繰り返し二乗法"
     },
-	
+    "中央値構造体": {
+        "prefix": "struct Median",
+        "body": [
+            "// 中央値構造体",
+            "// *S.rbegin()が中央値になるように構築",
+            "struct Median{",
+            "",
+            "    multiset<int> S,L;",
+            "",
+            "    // SとLの要素数調整",
+            "    // S>=Lになるようにする",
+            "    void rebuild(){",
+            "        while (L.size()<S.size()){",
+            "            auto k=S.end();",
+            "            k=prev(k);",
+            "            L.insert(*k);",
+            "            S.erase(k);",
+            "        }",
+            "",
+            "        while (S.size()<L.size()){",
+            "            auto k=L.begin();",
+            "            S.insert(*k);",
+            "            L.erase(k);",
+            "        }",
+            "    }",
+            "",
+            "    // 追加",
+            "    void insert(int a){",
+            "        if (S.size()==0||a<=*S.rbegin()) S.insert(a);",
+            "        else L.insert(a);",
+            "",
+            "        rebuild();",
+            "    }",
+            "",
+            "",
+            "    // 削除",
+            "    // 要素がない場合は何もせずfalseを返す",
+            "    bool erase(int a){",
+            "",
+            "        if (S.contains(a)){",
+            "            S.erase(S.find(a));",
+            "            rebuild();",
+            "            return true;",
+            "        }",
+            "        else if (L.contains(a)){",
+            "            L.erase(L.find(a));",
+            "            rebuild();",
+            "            return true;",
+            "        }",
+            "        else return false;",
+            "",
+            "    }",
+            "",
+            "    // 中央値を取り出す",
+            "    // 要素数0の場合は0を返す",
+            "    int get(){",
+            "        if (S.size()==0)return 0;",
+            "        else return *S.rbegin();",
+            "    }",
+            "",
+            "};",
+            "",
+        ],
+        "description": "中央値構造体"
+    },
+    "有理数構造体": {
+        "prefix": "Rational",
+        "body": [
+            "// 有理数（分数）構造体: num / den",
+            "struct Rational {",
+            "    i64 num; // 分子 (numerator)",
+            "    i64 den; // 分母 (denominator)",
+            "",
+            "    // 約分と符号の正規化を行う構造体コンストラクタ",
+            "    Rational(i64 n = 0, i64 d = 1) {",
+            "        if (d == 0) {",
+            "            num = n; den = 0; // ゼロ除算用",
+            "            return;",
+            "        }",
+            "        if (d < 0) { n = -n; d = -d; } // 分母は常に正にする",
+            "        i64 g = gcd(abs(n), abs(d));",
+            "        num = n / g;",
+            "        den = d / g;",
+            "    }",
+            "",
+            "    // 表示用（整数なら整数、分数なら n/d ）",
+            "    void print() const {",
+            "        if (den == 1) cout << num;",
+            "        else cout << num << \"/\" << den;",
+            "    }",
+            "};",
+        ],
+        "description": "有理数構造体"
+    },
     "struct Point": {
         "prefix": "struct Point",
         "body": [
-            "// Geminiと作ったポイント型ライブラリ(2026/02/01作成)",
+               "// Geminiと作ったポイント型ライブラリ",
+            "// (2026/02/01:作成)",
+            "// (2026/07/25:直線の方程式、垂直二等分線、直線の交点を追加)",
+            "",
+            "// 有理数（分数）構造体: num / den",
+            "struct Rational {",
+            "    i64 num; // 分子 (numerator)",
+            "    i64 den; // 分母 (denominator)",
+            "",
+            "    // 約分と符号の正規化を行う構造体コンストラクタ",
+            "    Rational(i64 n = 0, i64 d = 1) {",
+            "        if (d == 0) {",
+            "            num = n; den = 0; // ゼロ除算用",
+            "            return;",
+            "        }",
+            "        if (d < 0) { n = -n; d = -d; } // 分母は常に正にする",
+            "        i64 g = gcd(abs(n), abs(d));",
+            "        num = n / g;",
+            "        den = d / g;",
+            "    }",
+            "",
+            "    // 表示用（整数なら整数、分数なら n/d ）",
+            "    void print() const {",
+            "        if (den == 1) cout << num;",
+            "        else cout << num << \"/\" << den;",
+            "    }",
+            "};",
             "",
             "template <typename T>",
             "struct Point {",
@@ -751,13 +798,30 @@
             "    // スカラー倍の左右対称性: k * p (これがないと p * k しかできない)",
             "    friend Point operator*(T k, const Point& p) {return p * k;}",
             "",
+            "    // 入力ストリーム (cin >> p で x と y を連続入力できるようにする)",
+            "    friend istream& operator>>(istream& is, Point& p) {",
+            "        is >> p.x >> p.y;",
+            "        return is;",
+            "    }",
+            "",
             "    // 出力ストリーム: cout << p",
-            "    friend std::ostream& operator<<(std::ostream& os, const Point& p) {",
+            "    friend ostream& operator<<(ostream& os, const Point& p) {",
             "        return os << \"(\" << p.x << \", \" << p.y << \")\";",
             "    }",
             "};",
             "",
+            "// 直線の方程式 Ax + By + C = 0 の係数を保持する構造体",
+            "struct Line {",
+            "    i64 A;",
+            "    i64 B;",
+            "    i64 C;",
             "",
+            "    // 比較演算子",
+            "    bool operator==(const Line& other) const {return A == other.A && B == other.B && C == other.C;}",
+            "    bool operator!=(const Line& other) const {return !(*this == other);}",
+            "",
+            "",
+            "};",
             "// ---------------------------------------------------------",
             "//  幾何学ユーティリティ関数群",
             "// ---------------------------------------------------------",
@@ -903,12 +967,79 @@
             "    // I = (2S - B + 2) / 2",
             "    return (twice_area - B + 2) / 2;",
             "}",
+            "",
+            "",
+            "// =============================================================",
+            "// 1. 整数のみで垂直二等分線を求める関数",
+            "// =============================================================",
+            "optional<Line> perpendicularBisector(const Point<i64>& p1, const Point<i64>& p2) {",
+            "    if (p1==p2) {",
+            "        return std::nullopt; // 同じ点",
+            "    }",
+            "",
+            "    // 両辺を2倍して分数（2での割り算）を消去",
+            "    i64 A = 2 * (p2.x - p1.x);",
+            "    i64 B = 2 * (p2.y - p1.y);",
+            "    ",
+            "    // C = -(A * mid_x + B * mid_y) ",
+            "    //   = -((x2 - x1)(x1 + x2) + (y2 - y1)(y1 + y2))",
+            "    //   = -(x2^2 - x1^2 + y2^2 - y1^2)",
+            "",
+            "    // i64 C = -((p2.x * p2.x - p1.x * p1.x) + (p2.y * p2.y - p1.y * p1.y));",
+            "    i64 C = p1.norm2()-p2.norm2();",
+            "    ",
+            "",
+            "    // A, B, C の最大公約数で割って係数を最小化（オーバーフロー予防）",
+            "    i64 g = gcd(abs(A), gcd(abs(B), abs(C)));",
+            "    // g が 1 より大きい場合のみ割る (g == 0 や g == 1 のときは何もしない)",
+            "    if (g > 1) {",
+            "        A /= g;",
+            "        B /= g;",
+            "        C /= g;",
+            "    }",
+            "",
+            "    // 先頭の係数(A、Aが0ならB)がマイナスの場合、全体に -1 をかけて正にする",
+            "    if (A < 0 || (A == 0 && B < 0)) {",
+            "        A = -A;",
+            "        B = -B;",
+            "        C = -C;",
+            "    }",
+            "    ",
+            "",
+            "    return Line{A, B, C};",
+            "}",
+            "",
+            "// =============================================================",
+            "// 2. 整数直線から分数座標の交点を求める関数",
+            "//    l1==l2の時、解なしになるので注意",
+            "// =============================================================",
+            "optional<Point<Rational>> line_intersect(const optional<Line>& l1, const optional<Line>& l2) {",
+            "    if (!l1.has_value() || !l2.has_value()) {",
+            "        return std::nullopt;",
+            "    }",
+            "",
+            "    // 行列式 D = A1*B2 - A2*B1",
+            "    i64 det = l1->A * l2->B - l2->A * l1->B;",
+            "",
+            "    // D == 0 は平行（交点なし）",
+            "    if (det == 0) {",
+            "        return std::nullopt;",
+            "    }",
+            "",
+            "    // クラメルの公式を「有理数（分数）」で正確に計算",
+            "    // x = (B1*C2 - B2*C1) / det",
+            "    // y = (A2*C1 - A1*C2) / det",
+            "    i64 num_x = l1->B * l2->C - l2->B * l1->C;",
+            "    i64 num_y = l2->A * l1->C - l1->A * l2->C;",
+            "",
+            "    Rational rx(num_x, det);",
+            "    Rational ry(num_y, det);",
+            "",
+            "    return Point<Rational>{rx, ry};",
+            "}",
         ],
         "description": "Geminiと作ったポイント型ライブラリ"
     },
-
-
-
     "struct Modint": {
         "prefix": "struct Modint",
         "body": [
@@ -996,7 +1127,67 @@
         ],
         "description": "Modint構造体"
     },
-
+    "モンゴメリ演算": {
+        "prefix": "Montgomery",
+        "body": [
+            "using u64 = uint64_t;",
+            "using u32 = uint32_t;",
+            "",
+            "struct Montgomery {",
+            "    static constexpr u32 MOD = 998244353;",
+            "    static constexpr u32 MOD2 = MOD * 2;",
+            "    static constexpr u32 MOD_INV = []() {",
+            "        u32 inv = 1;",
+            "        for (int i = 0; i < 31; i++) inv *= 2 - MOD * inv;",
+            "        return -inv;",
+            "    }();",
+            "    static constexpr u32 R2_MOD = []() {",
+            "        u64 r = 1;",
+            "        for (int i = 0; i < 64; i++) { r <<= 1; if (r >= MOD) r -= MOD; }",
+            "        return (u32)r;",
+            "    }();",
+            "",
+            "    u32 val;",
+            "    Montgomery() : val(0) {}",
+            "    Montgomery(u32 v) : val(reduce((u64)v * R2_MOD)) {}",
+            "",
+            "    static u32 reduce(u64 T) {",
+            "        u32 m = (u32)T * MOD_INV;",
+            "        u32 t = (T + (u64)m * MOD) >> 32;",
+            "        return t >= MOD ? t - MOD : t;",
+            "    }",
+            "",
+            "    u32 get() const { return reduce(val); }",
+            "",
+            "    Montgomery operator+(const Montgomery& o) const {",
+            "        Montgomery res; res.val = val + o.val;",
+            "        if (res.val >= MOD2) res.val -= MOD2;",
+            "        return res;",
+            "    }",
+            "    Montgomery operator-(const Montgomery& o) const {",
+            "        Montgomery res; res.val = val - o.val + MOD2;",
+            "        if (res.val >= MOD2) res.val -= MOD2;",
+            "        return res;",
+            "    }",
+            "    Montgomery operator*(const Montgomery& o) const {",
+            "        Montgomery res; res.val = reduce((u64)val * o.val);",
+            "        return res;",
+            "    }",
+            "    bool operator==(const Montgomery& o) const { return get() == o.get(); }",
+            "",
+            "    Montgomery pow(long long n) const {",
+            "        Montgomery base = *this, result(1);",
+            "        for (; n > 0; n >>= 1) {",
+            "            if (n & 1) result = result * base;",
+            "            base = base * base;",
+            "        }",
+            "        return result;",
+            "    }",
+            "    Montgomery inv() const { return pow(MOD - 2); }",
+            "};",
+        ],
+        "description": "モンゴメリ演算"
+    },
     "mod組合せ": {
         "prefix": "modcomb",
         "body": [
@@ -1034,8 +1225,6 @@
         ],
         "description": "mod組合せ"
     },
-
-
     "modcomb": {
         "prefix": "modcomb",
         "body": [
@@ -1071,28 +1260,24 @@
         ],
         "description": "modをとった組合せ"
     },
-
-
-	"meguru_bisearch(int ng,int ok)": {
-		"prefix": "meguru_bisearch(int ng,int ok)",
-		"body": [
-			"bool judge(int mid){",
-			"    if ()return true;",
-			"    else return false;",
-			"}",
-			"",
-			"int meguru_bisearch(int ng,int ok){",
-			"    while(abs(ok-ng)>1){",
-			"        int mid=(ok+ng)/2;",
-			"        (judge(mid))? ok=mid:ng=mid;",
-			"    }",
-			"    return ok;",
-			"}",
-		],
-		"description": "めぐる式二分探索"
-	},
-	
-
+    "meguru_bisearch(int ng,int ok)": {
+        "prefix": "meguru_bisearch(int ng,int ok)",
+        "body": [
+            "bool judge(int mid){",
+            "    if ()return true;",
+            "    else return false;",
+            "}",
+            "",
+            "int meguru_bisearch(int ng,int ok){",
+            "    while(abs(ok-ng)>1){",
+            "        int mid=(ok+ng)/2;",
+            "        (judge(mid))? ok=mid:ng=mid;",
+            "    }",
+            "    return ok;",
+            "}",
+        ],
+        "description": "めぐる式二分探索"
+    },
     "組合せ": {
         "prefix": "comb",
         "body": [
@@ -1114,7 +1299,6 @@
         ],
         "description": "組合せ"
     },
-
     "配列の総和": {
         "prefix": "sumA",
         "body": [
@@ -1122,8 +1306,6 @@
         ],
         "description": "配列の総和"
     },
-
-
     "累積和配列": {
         "prefix": "sumA",
         "body": [
@@ -1133,7 +1315,6 @@
         ],
         "description": "累積和配列"
     },
-
     "スライド最小値": {
         "prefix": "Slide_Minimum",
         "body": [
@@ -1155,7 +1336,6 @@
         ],
         "description": "配列Aの連続K個中の最小値を求める"
     },
-
     "スライド最大値": {
         "prefix": "Slide_Maximum",
         "body": [
@@ -1177,9 +1357,7 @@
         ],
         "description": "配列Aの連続K個中の最大値を求める"
     },
-
-
-	"線形篩": {
+    "線形篩": {
         "prefix": "prime(int N)",
         "body": [
             "vector<int> prime(int N){",
@@ -1202,7 +1380,6 @@
         ],
         "description": "素数列挙(線形篩)"
     },
-
     "prime_judge": {
         "prefix": "prime_judge",
         "body": [
@@ -1218,8 +1395,6 @@
         ],
         "description": "素数判定"
     },
-
-
     "divenum": {
         "prefix": "divenum",
         "body": [
@@ -1239,8 +1414,6 @@
         ],
         "description": "約数列挙"
     },
-
-
     "素因数分解": {
         "prefix": "fact",
         "body": [
@@ -1267,8 +1440,6 @@
         ],
         "description": "素因数分解"
     },
-
-
     "Millar_Rabin": {
         "prefix": "Millar_Rabin",
         "body": [
@@ -1334,33 +1505,28 @@
         ],
         "description": "ミラーラビン素数判定法"
     },
-
-
-
-	"ctoi": {
-		"prefix": "int ctoi",
-		"body": [
-			"///char型の数字からint型の数字へ変換する",
-			"int ctoi(char c) {",
-			"   switch (c) {",
-			"       case '0': return 0;",
-			"       case '1': return 1;",
-			"       case '2': return 2;",
-			"       case '3': return 3;",
-			"       case '4': return 4;",
-			"       case '5': return 5;",
-			"       case '6': return 6;",
-			"       case '7': return 7;",
-			"       case '8': return 8;",
-			"       case '9': return 9;",
-			"       default: return 0;",
-			"   }",
-			"}",
-		],
-		"description": "int ctoi"
-	},
-
-
+    "ctoi": {
+        "prefix": "int ctoi",
+        "body": [
+            "///char型の数字からint型の数字へ変換する",
+            "int ctoi(char c) {",
+            "   switch (c) {",
+            "       case '0': return 0;",
+            "       case '1': return 1;",
+            "       case '2': return 2;",
+            "       case '3': return 3;",
+            "       case '4': return 4;",
+            "       case '5': return 5;",
+            "       case '6': return 6;",
+            "       case '7': return 7;",
+            "       case '8': return 8;",
+            "       case '9': return 9;",
+            "       default: return 0;",
+            "   }",
+            "}",
+        ],
+        "description": "int ctoi"
+    },
     "10進法からn進法に変換": {
         "prefix": "string Conv_N_base",
         "body": [
@@ -1385,17 +1551,15 @@
         ],
         "description": "10進法からn進法に変換"
     },
-
-	"pairの2つ目昇順": {
-		"prefix": "bool comp_second_smaller",
-		"body": [
+    "pairの2つ目昇順": {
+        "prefix": "bool comp_second_smaller",
+        "body": [
             "auto comp_second_smaller = [](const auto& a, const auto& b) {",
             "    return tie(a.second, a.first) < tie(b.second, b.first);",
             "};",
-		],
-		"description": "pair_second小さい順の比較関数"
-	},
-
+        ],
+        "description": "pair_second小さい順の比較関数"
+    },
     "pairの2つ目降順": {
         "prefix": "bool comp_second_larger",
         "body": [
@@ -1405,19 +1569,26 @@
         ],
         "description": "pair_second大きい順の比較関数"
     },
-
-	"unionfind": {
-		"prefix": "unionfind",
-		"body": [
+    "unionfind": {
+        "prefix": "unionfind",
+        "body": [
             "struct DSU{",
             "    int _n;",
             "    vector<int> par,rank,par_list;",
-            "    DSU(int N):_n(N+1),par(N+1),rank(N+1,1){",
+            "    set<int> par_set;",
+            "    DSU(int N):_n(N+1),par(N+1),rank(N+1,1),",
+            "    par_set(views::iota(1,N+1).begin(),views::iota(1,N+1).end())",
+            "    {",
             "        iota(par.begin(),par.end(),0);",
             "    }",
             "",
-            "    int Find(int a){return (par[a]!=a?par[a]=Find(par[a]):a);}",
-            "",
+            "    int Find(int a){",
+            "        if (par[a]!=a){",
+            "            par_set.erase(a);",
+            "            return par[a]=Find(par[a]);",
+            "        } ",
+            "        else{return a;}",
+            "    }",
             "    void Union(int a,int b){",
             "",
             "        a=Find(a);",
@@ -1428,7 +1599,8 @@
             "",
             "        rank[a]+=rank[b];",
             "        par[b]=a;",
-            "        ",
+            "        par_set.erase(b);",
+            "",
             "        return;",
             "    }",
             "",
@@ -1438,17 +1610,10 @@
             "",
             "    int size(int i){return rank[Find(i)];}",
             "",
-            "    void make_par_list(){",
-            "        par_list.clear();",
-            "        rep(i,_n)if (Find(i)==i)par_list.emplace_back(i);",
-            "        return;",
-            "    }",
-            "",
             "};",
-		],
-		"description": "Union-Find"
-	},
-
+        ],
+        "description": "Union-Find"
+    },
     "非構造体unionfind": {
         "prefix": "unionfind",
         "body": [
@@ -1495,7 +1660,6 @@
         ],
         "description": "非構造体Union-Find"
     },
-
     "PotentialUnionFind": {
         "prefix": "PotentialUnionFind",
         "body": [
@@ -1586,8 +1750,6 @@
         ],
         "description": "ダブリング"
     },
-
-
     "int cur[4][2]": {
         "prefix": "int cur[4][2]",
         "body": [
@@ -1595,7 +1757,6 @@
         ],
         "description": "4方向カーソル"
     },
-
     "int cur[8][2]": {
         "prefix": "int cur[8][2]",
         "body": [
@@ -1603,7 +1764,6 @@
         ],
         "description": "8方向カーソル"
     },
-
     "RLDUカーソル": {
         "prefix": "map<char,pair<int,int>> cur",
         "body": [
@@ -1618,8 +1778,6 @@
         ],
         "description": "RLDUカーソル"
     },
-
-
     "if not": {
         "prefix": "if not",
         "body": [
@@ -1627,8 +1785,6 @@
         ],
         "description": "範囲外チェック"
     },
-
-
     "edge": {
         "prefix": "edge",
         "body": [
@@ -1653,7 +1809,7 @@
             "",
             "    while (!q.empty()){",
             "        int temp=q.front();",
-			"        q.pop();",
+            "        q.pop();",
             "",
             "        for (auto i:edge[temp]){",
             "            if (depth[i]!=-1) continue;",
@@ -1665,7 +1821,6 @@
         ],
         "description": "根付き木作成"
     },
-
     "Graph": {
         "prefix": "Graph",
         "body": [
@@ -1709,8 +1864,6 @@
         ],
         "description": "汎用BFS"
     },
-
-
     "DFS": {
         "prefix": "dfs",
         "body": [
@@ -1764,7 +1917,6 @@
         ],
         "description": "再帰DFS"
     },
-
     "Tarjan_SCC": {
         "prefix": "Tarjan_SCC",
         "body": [
@@ -1818,8 +1970,6 @@
         ],
         "description": "Tarjan's SCC"
     },
-
-
     "dijkstra": {
         "prefix": "dijkstra",
         "body": [
@@ -1878,8 +2028,6 @@
         ],
         "description": "ダイクストラ法"
     },
-
-
     "Bellman-Ford": {
         "prefix": "Bellman-Ford",
         "body": [
@@ -1931,10 +2079,6 @@
         ],
         "description": "ベルマンフォード法"
     },
-
-
-
-
     "Warshall-Floyd": {
         "prefix": "Warshall-Floyd",
         "body": [
@@ -1946,8 +2090,6 @@
         ],
         "description": "ワ―シャルフロイド法"
     },
-
-
     "フェニック木": {
         "prefix": "Fenwick",
         "body": [
@@ -2005,8 +2147,6 @@
         ],
         "description": "フェニック木,BIT"
     },
-
-
     "vector<int> getpos(int s,int e){": {
         "prefix": "vector<int> getpos(int s,int e){",
         "body": [
@@ -2032,7 +2172,6 @@
         ],
         "description": "セグメント木座標取得"
     },
-
     "segmenttree": {
         "prefix": "segmenttree",
         "body": [
@@ -2048,7 +2187,6 @@
         ],
         "description": "セグメント木初期化"
     },
-
     "RLE": {
         "prefix": "RLE",
         "body": [
@@ -2067,7 +2205,6 @@
         ],
         "description": "ランレングス圧縮"
     },
-
     "Manacher": {
         "prefix": "Manacher",
         "body": [
@@ -2095,8 +2232,6 @@
         ],
         "description": "Manacher"
     },
-
-
     "編集距離": {
         "prefix": "edit_dist",
         "body": [
@@ -2120,7 +2255,6 @@
         ],
         "description": "レーベンシュタイン距離、編集距離"
     },
-
     "K文字以下の編集距離": {
         "prefix": "edit_dist",
         "body": [
@@ -2158,7 +2292,6 @@
         ],
         "description": "K文字以下の編集距離を求める"
     },
-
     "ACLを使ったRollingHash": {
         "prefix": "struct RollingHash",
         "body": [
@@ -2241,8 +2374,6 @@
         ],
         "description": "ACLを使ったRollingHash"
     },
-
-
     "二次元累積和": {
         "prefix": "sum2D",
         "body": [
@@ -2309,7 +2440,6 @@
         ],
         "description": "二次元imos法"
     },
-
     "数論変換FFT": {
         "prefix": "struct NTT",
         "body": [
@@ -2436,7 +2566,170 @@
         ],
         "description": "数論変換FFT"
     },
-
+    "NTT改": {
+        "prefix": "NTT",
+        "body": [
+            "constexpr int ROOT = 3;",
+            "constexpr int ROT_TABLE_SIZE = 23;",
+            "constexpr int MOD = 998244353;",
+            "",
+            "// 回転子を前計算して配列に格納しておく",
+            "template <int maxL>",
+            "struct NTTtable_impl{",
+            "    static constexpr int N=(1<<maxL);",
+            "    vector<i64> table;",
+            "",
+            "    NTTtable_impl():table(N+1){",
+            "        i64 w = reppow(ROOT, (MOD-1)>>maxL, MOD);",
+            "",
+            "        // 回転子を配列に格納しておく",
+            "        i64 temp = 1;",
+            "        for (int i = 0; i<=N; i++) {",
+            "            table[i] = temp;",
+            "            temp = (temp*w)%MOD;",
+            "        }",
+            "    }",
+            "",
+            "    static const NTTtable_impl<maxL> &get() {",
+            "        static NTTtable_impl instance;",
+            "        return instance;",
+            "    }",
+            "",
+            "};",
+            "using rot_table = NTTtable_impl<ROT_TABLE_SIZE>;",
+            "",
+            "// NTT用の作業領域確保",
+            "struct NTT_Workspace {",
+            "    // 畳み込みに必要な最大サイズを確保しておく",
+            "    static inline std::vector<i64> buffer_a, buffer_b, buffer_c;",
+            "",
+            "    // サイズ調整（必要なら確保、不要ならそのまま）",
+            "    static void prepare(int n) {",
+            "        if (buffer_a.size() < (size_t)n) buffer_a.resize(n);",
+            "        if (buffer_b.size() < (size_t)n) buffer_b.resize(n);",
+            "        if (buffer_c.size() < (size_t)n) buffer_c.resize(n);",
+            "",
+            "        // ゼロ埋め",
+            "        memset(NTT_Workspace::buffer_a.data(), 0, sizeof(i64)*NTT_Workspace::buffer_a.size());",
+            "        memset(NTT_Workspace::buffer_b.data(), 0, sizeof(i64)*NTT_Workspace::buffer_b.size());",
+            "        memset(NTT_Workspace::buffer_c.data(), 0, sizeof(i64)*NTT_Workspace::buffer_c.size());",
+            "",
+            "    }",
+            "};",
+            "",
+            "// 数論変換を用いたFTT",
+            "struct NTT_Processor",
+            "{",
+            "",
+            "    int N, L, preN, la, lb;",
+            "    i64 invN;",
+            "",
+            "    NTT_Processor(vector<i64> &A,vector<i64> &B){",
+            "",
+            "        // Cに必要な長さ",
+            "        la=size(A);",
+            "        lb=size(B);",
+            "        preN=N=la+lb-1;",
+            "        L=32-__builtin_clz(N);",
+            "",
+            "        // Nを2べきに合わせる",
+            "        if (__builtin_popcount(N) > 1)",
+            "            N=1<<L;",
+            "        else",
+            "            L--;",
+            "",
+            "        invN=reppow(N,-1,MOD);",
+            "        ",
+            "        // 作業領域確保 ",
+            "        NTT_Workspace::prepare(N);",
+            "",
+            "        assert(NTT_Workspace::buffer_a.size() >= (size_t)N);",
+            "        assert(NTT_Workspace::buffer_b.size() >= (size_t)N);",
+            "",
+            "        memcpy(NTT_Workspace::buffer_a.data(), A.data(), sizeof(i64)*la);",
+            "        memcpy(NTT_Workspace::buffer_b.data(), B.data(), sizeof(i64)*lb);",
+            "",
+            "    }",
+            "    void execute(){",
+            "        // 周波数領域に変換",
+            "        Cooley_Tukey_FFT(NTT_Workspace::buffer_a);",
+            "        Cooley_Tukey_FFT(NTT_Workspace::buffer_b);",
+            "",
+            "        // 周波数領域で積を取る",
+            "        rep(i,N) NTT_Workspace::buffer_c[i]=(NTT_Workspace::buffer_a[i]*NTT_Workspace::buffer_b[i])%MOD;",
+            "",
+            "        // 逆変換で時間領域へ変換",
+            "        Cooley_Tukey_FFT(NTT_Workspace::buffer_c, true);",
+            "        NTT_Workspace::buffer_c.resize(preN);",
+            "    }",
+            "",
+            "    void bit_reverse_order(vector<i64> &sig){",
+            "        // バタフライ演算用の並び替え",
+            "        int j=0;",
+            "        repst(i,1,N) {",
+            "            int bit = N>>1;",
+            "            for (; j&bit; bit>>=1) j^=bit;",
+            "            j^=bit;",
+            "            if (i<j) swap(sig[i],sig[j]);",
+            "        }",
+            "    }",
+            "",
+            "    void Cooley_Tukey_FFT(vector<i64> &sig, bool inv = false){",
+            "",
+            "        bit_reverse_order(sig);",
+            "        int g,hg,gn,p,q,t1,t2,start,step;",
+            "",
+            "        const auto &rot=rot_table::get().table;",
+            "",
+            "        // L回バタフライ演算する",
+            "        repst(l,1,L+1){",
+            "",
+            "            // グループ内の数",
+            "            g=1<<l;",
+            "            // グループ内の数の半分",
+            "            hg=g>>1;",
+            "            // グループの数",
+            "            gn=N>>l;",
+            "            // 回転子をどれだけ飛ばすか",
+            "            step=rot_table::get().N>>l;",
+            "            start=0;",
+            "",
+            "            if (inv) {",
+            "                step*=-1;",
+            "                start=rot_table::get().N;",
+            "            }",
+            "",
+            "            rep(i,gn) rep(j,hg){",
+            "                p=g*i+j;",
+            "                q=p+hg;",
+            "",
+            "                int idx;",
+            "                // 回転子を掛ける",
+            "                idx=start+j*step;",
+            "",
+            "                sig[q]*=rot[idx];",
+            "                sig[q]%=MOD;",
+            "",
+            "                // バタフライ演算本体",
+            "                t1=sig[p]+sig[q];",
+            "                if (t1>=MOD) t1-=MOD;",
+            "                t2=MOD+sig[p]-sig[q];",
+            "                if (t2>=MOD) t2-=MOD;",
+            "",
+            "                sig[p]=t1;",
+            "                sig[q]=t2;",
+            "            }",
+            "        }",
+            "",
+            "        if(inv) for(auto &s:sig){",
+            "            s*=invN;",
+            "            s%=MOD;",
+            "        }",
+            "    }",
+            "};",
+        ],
+        "description": "NTT改良版"
+    },
     "二部マッチング": {
         "prefix": "Bipartile_Matching",
         "body": [
@@ -2516,7 +2809,6 @@
         ],
         "description": "二部マッチング"
     },
-
     "AVR": {
         "prefix": "AVR",
         "body": [
@@ -2549,6 +2841,4 @@
         ],
         "description": "AVRマイコン基本形"
     },
-
-
 }
